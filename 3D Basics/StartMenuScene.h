@@ -1,6 +1,8 @@
 #pragma once
 #include "Scene.h"
 
+#include <Box2D/Box2D.h>
+
 class GameMenu;
 
 class StartMenuScene :
@@ -17,5 +19,9 @@ public:
 private:
 	
 	GameMenu * startMenu = NULL;
+
+	// Box2D physics
+	b2Vec2 gravity;
+	b2World * physicsWorld = NULL;
 };
 

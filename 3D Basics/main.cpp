@@ -6,11 +6,11 @@
 
 
 
-int main (int argc, char **argv)
-{
-	GameManager::PlayGame(argc, argv);
-
-	return 0;
-
-}
+//int main (int argc, char **argv)
+//{
+//	GameManager::PlayGame(argc, argv);
+//
+//	return 0;
+//
+//}
 

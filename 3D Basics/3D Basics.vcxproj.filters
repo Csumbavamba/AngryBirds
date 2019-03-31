@@ -98,14 +98,8 @@
     <ClCompile Include="StartMenuScene.cpp">
       <Filter>Source\3D Game\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="CreditsScene.cpp">
-      <Filter>Source\3D Game\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Source\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="ControlsScene.cpp">
-      <Filter>Source\3D Game\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="GameScene.cpp">
       <Filter>Source\3D Game\Scenes</Filter>
@@ -115,6 +109,9 @@
     </ClCompile>
     <ClCompile Include="AudioSystem.cpp">
       <Filter>Source\Engine\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="HelloWorld.cpp">
+      <Filter>Source\3D Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -215,14 +212,8 @@
     <ClInclude Include="StartMenuScene.h">
       <Filter>Header Files\3D Game\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="CreditsScene.h">
-      <Filter>Header Files\3D Game\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Header Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="ControlsScene.h">
-      <Filter>Header Files\3D Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="GameScene.h">
       <Filter>Header Files\3D Game\Scene</Filter>
