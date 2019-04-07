@@ -17,7 +17,7 @@ public:
 	GameObject();
 	virtual ~GameObject();
 
-	virtual void Initialise() = 0;
+	virtual void Initialise();
 	virtual void Render(GLuint program) = 0;
 
 	void SetCamera(Camera * camera);

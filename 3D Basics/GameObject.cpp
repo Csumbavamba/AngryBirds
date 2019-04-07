@@ -1,5 +1,6 @@
 #include "GameObject.h"
 #include "Camera.h"
+#include "Physics.h"
 
 
 GameObject::GameObject()
@@ -8,6 +9,14 @@ GameObject::GameObject()
 }
 GameObject::~GameObject()
 {
+}
+
+void GameObject::Initialise()
+{
+	if (camera->GetViewMode() == ORTOGRAPHIC)
+	{
+		transform.scale *= Physics::Box2DMetersToPixels(1.0f);
+	}
 }
 
 

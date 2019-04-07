@@ -6,6 +6,7 @@
 #include "Input.h" 
 #include "AudioSound.h"
 #include "AudioEngine.h"
+#include "Physics.h"
 
 // Scenes
 #include "Scene.h"
@@ -53,6 +54,7 @@ GameManager::~GameManager()
 	backgroundMusic = NULL;
 
 	// Static Deletes
+	Physics::ShutDown();
 	AudioEngine::Shutdown();
 	SceneManager::ShutDown();
 	ShaderLoader::ShutDown();

@@ -13,7 +13,6 @@ public:
 	void Update(float deltaTime);
 
 private:
-	virtual void Initialise() override {};
 
 	GLuint imageProgram;
 	Mesh2D_Quad * backgroundImage = NULL;

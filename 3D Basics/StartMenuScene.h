@@ -20,8 +20,5 @@ private:
 	
 	GameMenu * startMenu = NULL;
 
-	// Box2D physics
-	b2Vec2 gravity;
-	b2World * physicsWorld = NULL;
 };
 

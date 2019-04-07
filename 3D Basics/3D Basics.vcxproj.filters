@@ -110,9 +110,9 @@
     <ClCompile Include="AudioSystem.cpp">
       <Filter>Source\Engine\Sound</Filter>
     </ClCompile>
-    <ClCompile Include="HelloWorld.cpp">
-      <Filter>Source\3D Game</Filter>
-    </ClCompile>
+    <ClCompile Include="DynamicBox.cpp" />
+    <ClCompile Include="StaticBox.cpp" />
+    <ClCompile Include="Physics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -224,6 +224,9 @@
     <ClInclude Include="AudioSystem.h">
       <Filter>Header Files\Engine\Sound</Filter>
     </ClInclude>
+    <ClInclude Include="DynamicBox.h" />
+    <ClInclude Include="StaticBox.h" />
+    <ClInclude Include="Physics.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">

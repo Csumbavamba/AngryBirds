@@ -49,7 +49,7 @@ struct Transform
 	}
 
 	// Calculate distance between 2 vectors
-	static float GetDistance2D(glm::vec3 position1, glm::vec3 position2)
+	static float GetDistance2D(glm::vec2 position1, glm::vec2 position2)
 	{
 		return std::sqrt(std::pow((position1.x - position2.x), 2.0f) + std::pow((position1.y - position2.y), 2.0f));
 	}
@@ -77,6 +77,19 @@ struct Transform
 	static glm::vec3 ToRadians(glm::vec3 degrees)
 	{
 		return glm::vec3(glm::radians(degrees.x), glm::radians(degrees.y), glm::radians(degrees.z));
+	}
+	static float ToRadians(float degrees)
+	{
+		return glm::radians(degrees);
+	}
+
+	static float ToDegrees(float radians)
+	{
+		return glm::degrees(radians);
+	}
+	static glm::vec3 ToDegrees(glm::vec3 radians)
+	{
+		return glm::vec3(glm::degrees(radians.x), glm::degrees(radians.y), glm::degrees(radians.z));
 	}
 
 };

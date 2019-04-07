@@ -118,6 +118,11 @@ glm::vec3 Camera::GetCameraUpDirection() const
 	return cameraUpDirection;
 }
 
+ViewMode Camera::GetViewMode() const
+{
+	return viewMode;
+}
+
 void Camera::RotateAroundObject(glm::vec3 objectLocation, float distanceFromObject, float deltaTime)
 {
 	timeElapsed += deltaTime;

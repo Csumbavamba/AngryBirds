@@ -31,6 +31,7 @@ public:
 	glm::vec3 GetCameraPosition() const;
 	glm::vec3 GetCameraLookDirection() const;
 	glm::vec3 GetCameraUpDirection() const;
+	ViewMode GetViewMode() const;
 
 	void RotateAroundObject(glm::vec3 objectLocation, float distanceFromObject, float deltaTime);
 	void FollowObject(glm::vec3 objectLocation);

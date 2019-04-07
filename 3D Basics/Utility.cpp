@@ -17,6 +17,8 @@ glm::vec2 Utility::GetScreenSize()
 	return glm::vec2(glutGet(GLUT_WINDOW_WIDTH), glutGet(GLUT_WINDOW_HEIGHT));
 }
 
+
+
 void Utility::Update()
 {
 	GetInstance()->screenWidth = glutGet(GLUT_WINDOW_WIDTH);

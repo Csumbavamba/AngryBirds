@@ -3,6 +3,7 @@
 #include "Dependencies\freeglut\freeglut.h"
 
 #include <WS2tcpip.h>
+#include <iostream>
 #include <string>
 #include <strstream>
 #include "Dependencies\glm\glm.hpp"
@@ -35,9 +36,19 @@ public:
 	static int GetScreenHeight();
 	static glm::vec2 GetScreenSize();
 
-	static void Update();
+	
 
+	static void Update();
 	static void ShutDown();
+
+	template<typename T>
+	static void Print(const T& value)
+	{
+		std::strstream theStream;
+		theStream << value << std::ends;
+
+		std::cout << theStream.str() << std::endl;
+	}
 
 	
 
