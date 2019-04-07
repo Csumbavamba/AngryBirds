@@ -17,6 +17,10 @@ glm::vec2 Utility::GetScreenSize()
 	return glm::vec2(glutGet(GLUT_WINDOW_WIDTH), glutGet(GLUT_WINDOW_HEIGHT));
 }
 
+GameMode Utility::GetGameMode()
+{
+	return GetInstance()->gameMode;
+}
 
 
 void Utility::Update()
@@ -30,3 +34,4 @@ void Utility::ShutDown()
 	delete instance;
 	instance = NULL;
 }
+

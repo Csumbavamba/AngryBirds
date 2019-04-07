@@ -10,11 +10,12 @@
 #include <string>
 
 class ShaderLoader;
-
 class Scene;
 class StartMenuScene;
 class GameScene;
 class AudioSound;
+
+
 
 class GameManager
 {
@@ -27,7 +28,7 @@ public:
 	static void Update();
 	
 	static void QuitGame();
-
+	
 
 	float deltaTime;
 
@@ -42,6 +43,7 @@ private:
 	static void ShutDownGame();
 
 	static GameManager * instance;
+	
 
 	GLuint program;
 	

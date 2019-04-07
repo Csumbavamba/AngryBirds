@@ -2,11 +2,11 @@
 
 #include <Box2D/Box2D.h>
 
-class Physics
+class Physics2D
 {
 public:
 
-	static Physics * GetInstance();
+	static Physics2D * GetInstance();
 	static b2Body * CreateBody(b2BodyDef bodyDef);
 
 	static float PixelsToBox2DMeters(float pixels);
@@ -16,12 +16,12 @@ public:
 	static void ShutDown();
 
 private:
-	Physics();
-	~Physics();
-	Physics(const Physics& copy) {};
-	Physics& operator= (const Physics& move) {};
+	Physics2D();
+	~Physics2D();
+	Physics2D(const Physics2D& copy) {};
+	Physics2D& operator= (const Physics2D& move) {};
 
-	static Physics * instance;
+	static Physics2D * instance;
 
 	b2Vec2 gravity;
 	b2World * world;

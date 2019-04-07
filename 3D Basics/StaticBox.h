@@ -1,9 +1,8 @@
 #pragma once
 #include "GameObject.h"
 
-#include "Physics.h"
-
 class Mesh2D_Quad;
+class Physics2D_Box;
 
 
 class StaticBox :
@@ -19,6 +18,6 @@ public:
 
 private:
 	Mesh2D_Quad * mesh = NULL;
-	b2Body * groundBody = NULL;
+	Physics2D_Box * physicsBody = NULL;
 };
 

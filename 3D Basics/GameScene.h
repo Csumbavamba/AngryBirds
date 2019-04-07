@@ -1,8 +1,8 @@
 #pragma once
 #include "Scene.h"
-#include "Box2D/Box2D.h"
 
 class DynamicBox;
+class DynamicCircle;
 class StaticBox;
 
 class GameScene :
@@ -17,10 +17,10 @@ public:
 	virtual void Update(float deltaTime) override;
 
 private:
-	b2Vec2 gravity;
-	b2World * world;
 
 	DynamicBox * testBox = NULL;
+	DynamicBox * testBox2 = NULL;
+	DynamicCircle * testCircle = NULL;
 	StaticBox * ground = NULL;
 };
 

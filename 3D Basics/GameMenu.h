@@ -25,8 +25,6 @@ public:
 
 private:
 
-	virtual void Initialise() override {};
-
 	UI_Button * buttons[2];
 	int buttonSelected;
 	

@@ -13,7 +13,6 @@ enum ViewMode
 class Camera
 {
 public:
-	Camera();
 	Camera(ViewMode viewMode);
 	~Camera();
 

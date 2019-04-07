@@ -10,7 +10,11 @@
 
 #define VALIDATE(a) if (!a) return (false)
 
-
+enum GameMode
+{
+	GAMEMODE_2D,
+	GAMEMODE_3D
+};
 
 
 class Utility
@@ -21,6 +25,7 @@ private:
 
 	int screenWidth = 1024;
 	int screenHeight = 768;
+	GameMode gameMode = GAMEMODE_2D;
 
 public:
 	static Utility * GetInstance()
@@ -35,8 +40,7 @@ public:
 	static int GetScreenWidth();
 	static int GetScreenHeight();
 	static glm::vec2 GetScreenSize();
-
-	
+	static GameMode GetGameMode();
 
 	static void Update();
 	static void ShutDown();
@@ -51,7 +55,6 @@ public:
 	}
 
 	
-
 	template<typename T>
 	static std::string ToString(const T& value)
 	{
@@ -59,7 +62,4 @@ public:
 		theStream << value << std::ends;
 		return (theStream.str());
 	}
-
-
-
 };

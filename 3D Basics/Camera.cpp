@@ -6,11 +6,7 @@
 #include "Utility.h"
 
 
-Camera::Camera()
-{
-	viewMode = ORTOGRAPHIC;
 
-}
 
 Camera::Camera(ViewMode viewMode)
 {

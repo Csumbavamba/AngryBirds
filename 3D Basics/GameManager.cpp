@@ -6,7 +6,7 @@
 #include "Input.h" 
 #include "AudioSound.h"
 #include "AudioEngine.h"
-#include "Physics.h"
+#include "Physics2D.h"
 
 // Scenes
 #include "Scene.h"
@@ -34,8 +34,6 @@ GameManager::GameManager()
 	backgroundMusic = new AudioSound("Audio/Moria-Music.mp3", LOOPING);
 
 	SceneManager::AddScenes(scenes);
-
-	
 }
 
 
@@ -54,7 +52,7 @@ GameManager::~GameManager()
 	backgroundMusic = NULL;
 
 	// Static Deletes
-	Physics::ShutDown();
+	Physics2D::ShutDown();
 	AudioEngine::Shutdown();
 	SceneManager::ShutDown();
 	ShaderLoader::ShutDown();
@@ -77,7 +75,7 @@ void GameManager::PlayGame(int argc, char ** argv)
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(1024, 768);
-	glutCreateWindow("Dwarf Game II");
+	glutCreateWindow("Angry Birds - by Zsombi");
 
 	glClearColor(1.0, 0.0, 0.0, 1.0); // Clear Window
 
@@ -174,6 +172,8 @@ void GameManager::QuitGame()
 {
 	glutLeaveMainLoop();
 }
+
+
 
 
 void GameManager::ShutDownGame()
