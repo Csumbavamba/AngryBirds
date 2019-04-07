@@ -6,13 +6,12 @@
 #include "Input.h" 
 #include "AudioSound.h"
 #include "AudioEngine.h"
+#include "Physics2D.h"
 
 // Scenes
 #include "Scene.h"
 #include "SceneManager.h"
-#include "ControlsScene.h"
 #include "StartMenuScene.h"
-#include "CreditsScene.h"
 #include "GameScene.h"
 
 #pragma comment(lib, "Ws2_32.lib")
@@ -26,21 +25,15 @@ GameManager::GameManager()
 	// Create Scenes
 	startMenuScene = new StartMenuScene();
 	startMenuScene->SetIsActiveScene(true);
-	creditsScene = new CreditsScene();
-	controlsScene = new ControlsScene();
 	gameScene = new GameScene();
 	
 	// Push Scenes into the scene Holder
 	scenes.push_back(startMenuScene);
-	scenes.push_back(creditsScene);
-	scenes.push_back(controlsScene);
 	scenes.push_back(gameScene);
 
 	backgroundMusic = new AudioSound("Audio/Moria-Music.mp3", LOOPING);
 
 	SceneManager::AddScenes(scenes);
-
-	
 }
 
 
@@ -59,6 +52,7 @@ GameManager::~GameManager()
 	backgroundMusic = NULL;
 
 	// Static Deletes
+	Physics2D::ShutDown();
 	AudioEngine::Shutdown();
 	SceneManager::ShutDown();
 	ShaderLoader::ShutDown();
@@ -81,7 +75,7 @@ void GameManager::PlayGame(int argc, char ** argv)
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(1024, 768);
-	glutCreateWindow("Dwarf Game II");
+	glutCreateWindow("Angry Birds - by Zsombi");
 
 	glClearColor(1.0, 0.0, 0.0, 1.0); // Clear Window
 
@@ -178,6 +172,8 @@ void GameManager::QuitGame()
 {
 	glutLeaveMainLoop();
 }
+
+
 
 
 void GameManager::ShutDownGame()

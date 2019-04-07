@@ -6,11 +6,7 @@
 #include "Utility.h"
 
 
-Camera::Camera()
-{
-	viewMode = ORTOGRAPHIC;
 
-}
 
 Camera::Camera(ViewMode viewMode)
 {
@@ -116,6 +112,11 @@ glm::vec3 Camera::GetCameraLookDirection() const
 glm::vec3 Camera::GetCameraUpDirection() const
 {
 	return cameraUpDirection;
+}
+
+ViewMode Camera::GetViewMode() const
+{
+	return viewMode;
 }
 
 void Camera::RotateAroundObject(glm::vec3 objectLocation, float distanceFromObject, float deltaTime)

@@ -20,7 +20,6 @@ public:
 
 private:
 
-	virtual void Initialise() override {};
 	glm::vec2 positionOnScreen;
 	TextLabel * text = NULL;
 };

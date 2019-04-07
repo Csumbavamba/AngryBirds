@@ -33,8 +33,6 @@ public:
 
 private:
 
-	virtual void Initialise() override {};
-
 	glm::vec2 positionOnScreen;
 	bool isClicked;
 	bool isSelected;

@@ -1,0 +1,22 @@
+#pragma once
+#include "GameObject.h"
+
+class Physics2D_Box;
+class Mesh2D_Quad;
+
+class DynamicBox :
+	public GameObject
+{
+public:
+	DynamicBox(Camera * mainCamera);
+	virtual ~DynamicBox();
+
+	virtual void Initialise() override;
+	virtual void Render(GLuint program) override;
+	virtual void Update(float deltaTime);
+
+private:
+	Mesh2D_Quad * mesh = NULL;
+	Physics2D_Box * physicsBody = NULL;
+};
+

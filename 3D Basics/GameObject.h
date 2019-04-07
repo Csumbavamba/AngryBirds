@@ -17,19 +17,23 @@ public:
 	GameObject();
 	virtual ~GameObject();
 
-	virtual void Initialise() = 0;
+	virtual void Initialise();
 	virtual void Render(GLuint program) = 0;
 
 	void SetCamera(Camera * camera);
 	
-	void SetActive(bool isActive);
+	void SetIsActive(bool isActive);
 	bool IsActive() const;
+
+	bool IsPhysicsEnabled() const; // TODO see if its needed
+	void SetPhysicsEnabled(bool isPhysicsEnabled);
 
 	Transform transform;
 
 protected:
 	Camera * camera = NULL;
 	bool isActive;
+	bool isPhysicsEnabled;
 	
 };
 

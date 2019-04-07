@@ -9,6 +9,7 @@ StartMenuScene::StartMenuScene()
 	startMenu = new GameMenu(mainCamera);
 
 	sceneName = "StartMenuScene"; // TODO Create method to get this from file
+
 }
 
 
@@ -16,6 +17,7 @@ StartMenuScene::~StartMenuScene()
 {
 	delete startMenu;
 	startMenu = NULL;
+
 }
 
 void StartMenuScene::Initialise()

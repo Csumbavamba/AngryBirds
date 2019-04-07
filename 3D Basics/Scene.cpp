@@ -1,12 +1,22 @@
 #include "Scene.h"
-
-
+#include "Utility.h"
 #include "Camera.h"
 
 
 Scene::Scene()
 {
-	this->mainCamera = new Camera(ORTOGRAPHIC);
+	sceneName = "";
+
+	// Create Scene cameras based on game mode
+	if (Utility::GetGameMode() == GAMEMODE_2D)
+	{
+		this->mainCamera = new Camera(ORTOGRAPHIC);
+	}
+	else
+	{
+		this->mainCamera = new Camera(PERSPECTIVE);
+	}
+	
 
 	mainCamera->Initialise();
 }
