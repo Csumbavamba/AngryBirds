@@ -3,19 +3,16 @@
 
 class Mesh2D_Quad;
 
-
-class Ground :
+class Pig :
 	public GameObject
 {
 public:
-	Ground(Camera * mainCamera);
-	virtual ~Ground();
+	Pig(Camera * camera);
+	virtual ~Pig();
 
 	virtual void Initialise() override;
 	virtual void Render(GLuint program) override;
 	virtual void Update(float deltaTime) override;
-
-	float GetTopOfGround();
 
 private:
 	Mesh2D_Quad * mesh = NULL;

@@ -36,7 +36,5 @@ protected:
 	bool isActive;
 	bool isPhysicsEnabled; // TODO - see if it is needed
 	PhysicsBody2D * physicsBody = NULL;
-
-	
 };
 

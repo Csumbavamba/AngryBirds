@@ -133,6 +133,7 @@
     <ClCompile Include="Level1.cpp">
       <Filter>Source\Angry Birds\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Pig.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -267,6 +268,7 @@
     <ClInclude Include="Level1.h">
       <Filter>Header Files\Angry Birds\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Pig.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">

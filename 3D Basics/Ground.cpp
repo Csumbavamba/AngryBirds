@@ -49,3 +49,9 @@ void Ground::Update(float deltaTime)
 		mesh->Update();
 	}
 }
+
+float Ground::GetTopOfGround()
+{
+	// Add half of the scale to it's z position
+	return transform.position.z + transform.scale.z;
+}

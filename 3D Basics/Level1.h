@@ -3,6 +3,7 @@
 
 class Plank;
 class Ground;
+class Pig;
 
 class Level1 :
 	public Scene
@@ -21,5 +22,7 @@ private:
 	Plank * plankRoof = NULL;
 	Plank * plankTop = NULL;
 	Ground * ground = NULL;
+	Pig * pig = NULL;
+	Pig * topPig = NULL;
 };
 

@@ -4,7 +4,8 @@
 #include "DynamicCircle.h"
 #include "Utility.h"
 #include "Physics2D.h"
-
+#include "Input.h"
+#include "SceneManager.h"
 
 GameScene::GameScene()
 {
@@ -54,5 +55,10 @@ void GameScene::Update(float deltaTime)
 	Scene::Update(deltaTime);
 
 	Physics2D::Update();
+
+	if (Input::GetKeyState('w') == DOWN_FIRST)
+	{
+		SceneManager::ChangeActiveScene("Level1");
+	}
 
 }

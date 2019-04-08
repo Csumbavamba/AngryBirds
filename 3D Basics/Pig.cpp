@@ -1,39 +1,41 @@
-#include "DynamicCircle.h"
+#include "Pig.h"
 #include "Mesh2D_Quad.h"
 #include "PhysicsBody2D.h"
 #include "Texture.h"
 
 
 
-DynamicCircle::DynamicCircle(Camera * mainCamera)
+Pig::Pig(Camera * camera)
 {
-	this->camera = mainCamera;
+	this->camera = camera;
 	mesh = new Mesh2D_Quad(this);
 	physicsBody = new PhysicsBody2D(this);
 
-	mesh->GetTexture()->SetTexturePath("Sprites/AwesomeFace.png");
-	
+	mesh->GetTexture()->SetTexturePath("Sprites/Pig.png");
 }
 
 
-DynamicCircle::~DynamicCircle()
+Pig::~Pig()
 {
 	delete mesh;
 	mesh = NULL;
-	
+
 	delete physicsBody;
 	physicsBody = NULL;
 }
 
-void DynamicCircle::Initialise()
+void Pig::Initialise()
 {
 	mesh->Initialise();
 
+	// Setup Physics
 	physicsBody->AddRigidBody(b2_dynamicBody);
-	physicsBody->AddCircleCollider();
+	physicsBody->AddCircleCollider(10.0f, 0.2f);
+	physicsBody->GetRigidBody()->SetLinearDamping(0.9f);
+	physicsBody->GetRigidBody()->SetAngularDamping(0.9f);
 }
 
-void DynamicCircle::Render(GLuint program)
+void Pig::Render(GLuint program)
 {
 	if (isActive)
 	{
@@ -42,12 +44,11 @@ void DynamicCircle::Render(GLuint program)
 	
 }
 
-void DynamicCircle::Update(float deltaTime)
+void Pig::Update(float deltaTime)
 {
 	if (isActive)
 	{
 		mesh->Update();
-
 		physicsBody->Update();
 	}
 }

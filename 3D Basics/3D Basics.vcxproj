@@ -154,6 +154,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Physics2D.cpp" />
     <ClCompile Include="PhysicsBody2D.cpp" />
+    <ClCompile Include="Pig.cpp" />
     <ClCompile Include="Plank.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="StartMenuScene.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="Level1.h" />
     <ClInclude Include="Physics2D.h" />
     <ClInclude Include="PhysicsBody2D.h" />
+    <ClInclude Include="Pig.h" />
     <ClInclude Include="Plank.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="StartMenuScene.h" />
