@@ -1,13 +1,13 @@
 #include "DynamicBox.h"
 #include "Mesh2D_Quad.h"
-#include "Physics2D_Box.h"
+#include "PhysicsBody2D.h"
 
 
 DynamicBox::DynamicBox(Camera * mainCamera)
 {
 	camera = mainCamera;
 	mesh = new Mesh2D_Quad(this);
-	physicsBody = new Physics2D_Box(this);
+	physicsBody = new PhysicsBody2D(this);
 }
 
 DynamicBox::~DynamicBox()
@@ -23,18 +23,25 @@ void DynamicBox::Initialise()
 {
 	mesh->Initialise();
 
-	physicsBody->Initialise(b2_dynamicBody);
+	physicsBody->AddRigidBody(b2_dynamicBody);
+	physicsBody->AddBoxCollider();
 }
 
 void DynamicBox::Render(GLuint program)
 {
-	mesh->Render(camera, program);
+	if (isActive)
+	{
+		mesh->Render(camera, program);
+	}
+	
 }
 
 void DynamicBox::Update(float deltaTime)
 {
+	if (isActive)
+	{
+		mesh->Update();
 
-	mesh->Update();
-
-	physicsBody->Update();
+		physicsBody->Update();
+	}
 }

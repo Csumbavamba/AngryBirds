@@ -153,8 +153,7 @@
     <ClCompile Include="Level1.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Physics2D.cpp" />
-    <ClCompile Include="Physics2D_Box.cpp" />
-    <ClCompile Include="Physics2D_Circle.cpp" />
+    <ClCompile Include="PhysicsBody2D.cpp" />
     <ClCompile Include="Plank.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="StartMenuScene.cpp" />
@@ -197,8 +196,7 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Level1.h" />
     <ClInclude Include="Physics2D.h" />
-    <ClInclude Include="Physics2D_Box.h" />
-    <ClInclude Include="Physics2D_Circle.h" />
+    <ClInclude Include="PhysicsBody2D.h" />
     <ClInclude Include="Plank.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="StartMenuScene.h" />

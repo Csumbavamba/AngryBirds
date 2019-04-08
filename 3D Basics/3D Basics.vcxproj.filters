@@ -106,9 +106,6 @@
     <ClCompile Include="AudioSystem.cpp">
       <Filter>Source\Engine\Sound</Filter>
     </ClCompile>
-    <ClCompile Include="Physics2D_Box.cpp">
-      <Filter>Source\Engine\Physics\2D</Filter>
-    </ClCompile>
     <ClCompile Include="Physics2D.cpp">
       <Filter>Source\Engine\Physics\2D</Filter>
     </ClCompile>
@@ -124,13 +121,13 @@
     <ClCompile Include="DynamicCircle.cpp">
       <Filter>Source\Angry Birds</Filter>
     </ClCompile>
-    <ClCompile Include="Physics2D_Circle.cpp">
-      <Filter>Source\Engine\Physics\2D</Filter>
-    </ClCompile>
     <ClCompile Include="Plank.cpp" />
     <ClCompile Include="Level1.cpp" />
     <ClCompile Include="Application.cpp">
       <Filter>Source\Angry Birds</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsBody2D.cpp">
+      <Filter>Source\Engine\Physics\2D</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -233,9 +230,6 @@
     <ClInclude Include="Physics2D.h">
       <Filter>Header Files\Engine\Physics\2D</Filter>
     </ClInclude>
-    <ClInclude Include="Physics2D_Box.h">
-      <Filter>Header Files\Engine\Physics\2D</Filter>
-    </ClInclude>
     <ClInclude Include="Collider_Box2D.h">
       <Filter>Header Files\Engine\Physics\Legacy\Colliders</Filter>
     </ClInclude>
@@ -254,9 +248,6 @@
     <ClInclude Include="FileWriting.h">
       <Filter>Stash</Filter>
     </ClInclude>
-    <ClInclude Include="Physics2D_Circle.h">
-      <Filter>Header Files\Engine\Physics\2D</Filter>
-    </ClInclude>
     <ClInclude Include="DynamicCircle.h">
       <Filter>Header Files\Angry Birds</Filter>
     </ClInclude>
@@ -264,6 +255,9 @@
     <ClInclude Include="Level1.h" />
     <ClInclude Include="Application.h">
       <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsBody2D.h">
+      <Filter>Header Files\Engine\Physics\2D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

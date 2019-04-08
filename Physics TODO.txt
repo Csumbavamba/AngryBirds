@@ -2,3 +2,6 @@ Requirements for the game
 - Dynamic Circle - DONE
 - Dynamic Box (or brick) - almost
 - Static box as ground - DONE
+
+
+GameObject isActive --> It also sets it's children

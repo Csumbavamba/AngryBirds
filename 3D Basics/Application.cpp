@@ -27,12 +27,12 @@ Application::Application()
 	startMenuScene = new StartMenuScene();
 	startMenuScene->SetIsActiveScene(true);
 	gameScene = new GameScene();
-	//level1 = new Level1();
+	level1 = new Level1();
 	
 	// Push Scenes into the scene Holder
 	scenes.push_back(startMenuScene);
 	scenes.push_back(gameScene);
-	//scenes.push_back(level1);
+	scenes.push_back(level1);
 
 	backgroundMusic = new AudioSound("Audio/Moria-Music.mp3", LOOPING);
 

@@ -11,8 +11,11 @@ Level1::Level1()
 	plank = new Plank(mainCamera);
 	ground = new StaticBox(mainCamera);
 
+	// Add GameObjects to this list
+	gameObjects.push_back(plank);
+	gameObjects.push_back(ground);
+
 	plank->transform.position.z = +100.0f;
-	// plank->transform.rotation.y = 10.0f;
 
 	ground->transform.scale.x *= 10.0f;
 	ground->transform.position.z = -300.0f;

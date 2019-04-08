@@ -1,6 +1,6 @@
 #include "Plank.h"
 #include "Mesh2D_Quad.h"
-#include "Physics2D_Box.h"
+#include "PhysicsBody2D.h"
 #include "Texture.h"
 
 
@@ -8,10 +8,10 @@ Plank::Plank(Camera * mainCamera)
 {
 	this->camera = mainCamera;
 	mesh = new Mesh2D_Quad(this);
-	physicsBody = new Physics2D_Box(this);
+	physicsBody = new PhysicsBody2D(this);
 	
 	mesh->GetTexture()->SetTexturePath("Sprites/Plank.jpg");
-	// transform.scale.z *= 2.0f;
+	transform.scale.z *= 3.0f;
 }
 
 
@@ -28,7 +28,8 @@ void Plank::Initialise()
 {
 	mesh->Initialise();
 
-	physicsBody->Initialise(b2_dynamicBody);
+	physicsBody->AddRigidBody(b2_dynamicBody);
+	physicsBody->AddBoxCollider(20.0f, 0.8f);
 }
 
 void Plank::Render(GLuint program)
@@ -42,7 +43,7 @@ void Plank::Render(GLuint program)
 
 void Plank::Update(float deltaTime)
 {
-	//if (isActive)
+	if (isActive)
 	{
 		mesh->Update();
 		physicsBody->Update();

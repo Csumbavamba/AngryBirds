@@ -1,19 +1,19 @@
-#include "Physics2D_Box.h"
+#include "PhysicsBody2D.h"
 #include "GameObject.h"
 
 
 // After this scaling is no longer supported
-Physics2D_Box::Physics2D_Box(GameObject * owner)
+PhysicsBody2D::PhysicsBody2D(GameObject * owner)
 {
 	this->owner = owner;
 }
 
-Physics2D_Box::~Physics2D_Box()
+PhysicsBody2D::~PhysicsBody2D()
 {
 	rigidBody = NULL;
 }
 
-void Physics2D_Box::Initialise(b2BodyType type)
+void PhysicsBody2D::AddRigidBody(b2BodyType type)
 {
 	// Create a body definition - set it's position based on the pixel positions
 	b2BodyDef bodyDef;
@@ -26,15 +26,50 @@ void Physics2D_Box::Initialise(b2BodyType type)
 	// Create the body based on the body definition
 	rigidBody = Physics2D::CreateBody(bodyDef);
 
-	AddBoxCollider(5.0f, 0.3f);
+	owner->SetPhysicsEnabled(true);
+
 }
 
-b2Body * Physics2D_Box::GetRigidBody() const
+void PhysicsBody2D::AddCircleCollider(float32 density, float32 friction)
+{
+	b2CircleShape circle = CreateCircleCollider();
+
+	// Switch between what's the type
+	switch (rigidBody->GetType())
+	{
+	case b2_staticBody:
+	{
+		// Create a static fixture (0.0f density)
+		rigidBody->CreateFixture(&circle, 0.0f);
+		break;
+	}
+	case b2_dynamicBody:
+	{
+		// Create a dynamic fixture - base values on density and friction
+		b2FixtureDef fixtureDef;
+		fixtureDef.shape = &circle;
+		fixtureDef.density = density;
+		fixtureDef.friction = friction;
+
+		// Add fixture
+		rigidBody->CreateFixture(&fixtureDef); 
+
+		break;
+	}
+	default: // STATIC
+	{
+
+		break;
+	}
+	}
+}
+
+b2Body * PhysicsBody2D::GetRigidBody() const
 {
 	return rigidBody;
 }
 
-void Physics2D_Box::AddBoxCollider(float32 density, float32 friction)
+void PhysicsBody2D::AddBoxCollider(float32 density, float32 friction)
 {
 	b2PolygonShape box = CreateBoxCollider();
 
@@ -67,7 +102,7 @@ void Physics2D_Box::AddBoxCollider(float32 density, float32 friction)
 	}
 }
 
-b2PolygonShape Physics2D_Box::CreateBoxCollider()
+b2PolygonShape PhysicsBody2D::CreateBoxCollider()
 {
 	// Setup the width and height of the box
 	b2PolygonShape box;
@@ -78,11 +113,22 @@ b2PolygonShape Physics2D_Box::CreateBoxCollider()
 	return box;
 }
 
-
-void Physics2D_Box::Update()
+b2CircleShape PhysicsBody2D::CreateCircleCollider()
 {
-	// Update the transform in case it's a dynamic body - otherwise the gameobject should update it??
-	if (rigidBody->GetType() == b2_dynamicBody)
+	// Create Circle shape
+	b2CircleShape circle;
+
+	// Setup radius
+	circle.m_radius = Physics2D::PixelsToBox2DMeters(this->owner->transform.scale.x / 2.0f);
+
+	return circle;
+}
+
+
+void PhysicsBody2D::Update()
+{
+	// Update the transform in case it's active and it's a dynamic body
+	if (rigidBody->GetType() == b2_dynamicBody && rigidBody->IsActive())
 	{
 		// Get transform and rotation values from box2D
 		b2Vec2 position = rigidBody->GetPosition();

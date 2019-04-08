@@ -1,7 +1,6 @@
 #pragma once
 #include "GameObject.h"
 
-class Physics2D_Box;
 class Mesh2D_Quad;
 
 class DynamicBox :
@@ -17,6 +16,5 @@ public:
 
 private:
 	Mesh2D_Quad * mesh = NULL;
-	Physics2D_Box * physicsBody = NULL;
 };
 
