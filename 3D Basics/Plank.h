@@ -1,15 +1,14 @@
 #pragma once
 #include "GameObject.h"
 
-
 class Mesh2D_Quad;
 
-class DynamicCircle :
+class Plank :
 	public GameObject
 {
 public:
-	DynamicCircle(Camera * mainCamera);
-	virtual ~DynamicCircle();
+	Plank(Camera * mainCamera);
+	virtual ~Plank();
 
 	virtual void Initialise() override;
 	virtual void Render(GLuint program) override;

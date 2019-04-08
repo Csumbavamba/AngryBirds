@@ -91,9 +91,6 @@
     <ClCompile Include="GameMenu.cpp">
       <Filter>Source\Angry Birds</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Source\Angry Birds</Filter>
-    </ClCompile>
     <ClCompile Include="StartMenuScene.cpp">
       <Filter>Source\Angry Birds\Scenes</Filter>
     </ClCompile>
@@ -108,9 +105,6 @@
     </ClCompile>
     <ClCompile Include="AudioSystem.cpp">
       <Filter>Source\Engine\Sound</Filter>
-    </ClCompile>
-    <ClCompile Include="Physics2D_Box.cpp">
-      <Filter>Source\Engine\Physics\2D</Filter>
     </ClCompile>
     <ClCompile Include="Physics2D.cpp">
       <Filter>Source\Engine\Physics\2D</Filter>
@@ -127,7 +121,12 @@
     <ClCompile Include="DynamicCircle.cpp">
       <Filter>Source\Angry Birds</Filter>
     </ClCompile>
-    <ClCompile Include="Physics2D_Circle.cpp">
+    <ClCompile Include="Plank.cpp" />
+    <ClCompile Include="Level1.cpp" />
+    <ClCompile Include="Application.cpp">
+      <Filter>Source\Angry Birds</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsBody2D.cpp">
       <Filter>Source\Engine\Physics\2D</Filter>
     </ClCompile>
     <ClCompile Include="Bird.cpp">
@@ -217,9 +216,6 @@
     <ClInclude Include="GameMenu.h">
       <Filter>Header Files\Angry Birds</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files\Angry Birds</Filter>
-    </ClInclude>
     <ClInclude Include="StartMenuScene.h">
       <Filter>Header Files\Angry Birds\Scene</Filter>
     </ClInclude>
@@ -236,9 +232,6 @@
       <Filter>Header Files\Engine\Sound</Filter>
     </ClInclude>
     <ClInclude Include="Physics2D.h">
-      <Filter>Header Files\Engine\Physics\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="Physics2D_Box.h">
       <Filter>Header Files\Engine\Physics\2D</Filter>
     </ClInclude>
     <ClInclude Include="Collider_Box2D.h">
@@ -259,11 +252,16 @@
     <ClInclude Include="FileWriting.h">
       <Filter>Stash</Filter>
     </ClInclude>
-    <ClInclude Include="Physics2D_Circle.h">
-      <Filter>Header Files\Engine\Physics\2D</Filter>
-    </ClInclude>
     <ClInclude Include="DynamicCircle.h">
       <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="Plank.h" />
+    <ClInclude Include="Level1.h" />
+    <ClInclude Include="Application.h">
+      <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsBody2D.h">
+      <Filter>Header Files\Engine\Physics\2D</Filter>
     </ClInclude>
     <ClInclude Include="Bird.h">
       <Filter>Header Files\Angry Birds\Birds</Filter>

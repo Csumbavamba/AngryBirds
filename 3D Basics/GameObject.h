@@ -9,7 +9,7 @@
 #include "Transform.h"
 
 class Camera;
-class Collider_Sphere;
+class PhysicsBody2D;
 
 class GameObject
 {
@@ -33,7 +33,9 @@ public:
 protected:
 	Camera * camera = NULL;
 	bool isActive;
-	bool isPhysicsEnabled;
+	bool isPhysicsEnabled; // TODO - see if it is needed
+	PhysicsBody2D * physicsBody = NULL;
+
 	
 };
 

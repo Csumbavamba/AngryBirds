@@ -1,6 +1,6 @@
 #include "DynamicCircle.h"
 #include "Mesh2D_Quad.h"
-#include "Physics2D_Circle.h"
+#include "PhysicsBody2D.h"
 #include "Texture.h"
 
 
@@ -9,7 +9,7 @@ DynamicCircle::DynamicCircle(Camera * mainCamera)
 {
 	this->camera = mainCamera;
 	mesh = new Mesh2D_Quad(this);
-	physicsBody = new Physics2D_Circle(this);
+	physicsBody = new PhysicsBody2D(this);
 
 	mesh->GetTexture()->SetTexturePath("Sprites/AwesomeFace.png");
 	
@@ -29,17 +29,31 @@ void DynamicCircle::Initialise()
 {
 	mesh->Initialise();
 
-	physicsBody->Initialise(b2_dynamicBody);
+	physicsBody->AddRigidBody(b2_dynamicBody);
+	physicsBody->AddCircleCollider();
 }
 
 void DynamicCircle::Render(GLuint program)
 {
-	mesh->Render(camera, program);
+	if (isActive)
+	{
+		mesh->Render(camera, program);
+	}
+	
 }
 
 void DynamicCircle::Update(float deltaTime)
 {
-	mesh->Update();
+	if (isActive)
+	{
+		mesh->Update();
 
-	physicsBody->Update();
+		physicsBody->Update();
+	}
+	else
+	{
+		// TODO - Figure out how to do nicer
+		physicsBody->GetRigidBody()->SetActive(false);
+	}
+	
 }

@@ -93,7 +93,7 @@ void AudioEngine::ReleaseSound(AudioSound * sound)
 	audioSystem->sounds.erase(foundIt);
 }
 
-int AudioEngine::PlaySound(AudioSound * sound, glm::vec3 position, float volumeDB)
+int AudioEngine::PlaySound(AudioSound * sound, glm::vec3& position, float volumeDB)
 {
 	// Assign channel ID for the sound
 	int channelID = audioSystem->nextChannelID++;

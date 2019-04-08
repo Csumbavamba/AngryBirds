@@ -12,7 +12,7 @@ Physics2D_Circle::Physics2D_Circle(GameObject * owner)
 
 Physics2D_Circle::~Physics2D_Circle()
 {
-	rigidBody = NULL;
+	body = NULL;
 }
 
 void Physics2D_Circle::Initialise(b2BodyType type)
@@ -27,7 +27,8 @@ void Physics2D_Circle::Initialise(b2BodyType type)
 
 
 	// Create the body based on the body definition
-	rigidBody = Physics2D::CreateBody(bodyDef);
+	body = Physics2D::CreateBody(bodyDef);
+
 
 	// Create Circle shape
 	b2CircleShape circle;
@@ -42,7 +43,7 @@ void Physics2D_Circle::Initialise(b2BodyType type)
 	case b2_staticBody:
 	{
 		// Create a static fixture (0.0f density)
-		rigidBody->CreateFixture(&circle, 0.0f);
+		body->CreateFixture(&circle, 0.0f);
 		break;
 	}
 	case b2_dynamicBody:
@@ -54,7 +55,7 @@ void Physics2D_Circle::Initialise(b2BodyType type)
 		fixtureDef.friction = 0.3f;
 
 		// Add fixture
-		rigidBody->CreateFixture(&fixtureDef); // TODO - this makes the values to zero
+		body->CreateFixture(&fixtureDef); // TODO - this makes the values to zero
 
 		break;
 	}
@@ -69,11 +70,11 @@ void Physics2D_Circle::Initialise(b2BodyType type)
 void Physics2D_Circle::Update()
 {
 	// Update the transform in case it's a dynamic body - otherwise the gameobject should update it??
-	if (rigidBody->GetType() == b2_dynamicBody)
+	if (body->GetType() == b2_dynamicBody)
 	{
 		// Get transform and rotation values from box2D
-		b2Vec2 position = rigidBody->GetPosition();
-		float32 angle = rigidBody->GetAngle(); // This is in radians
+		b2Vec2 position = body->GetPosition();
+		float32 angle = body->GetAngle(); // This is in radians
 
 		// Update position
 		this->owner->transform.position.x = Physics2D::Box2DMetersToPixels(position.x);
@@ -82,11 +83,6 @@ void Physics2D_Circle::Update()
 		// Update radius
 		this->owner->transform.rotation.y = Transform::ToDegrees(angle);
 	}
-}
-
-b2Body * Physics2D_Circle::GetRigidBody() const
-{
-	return rigidBody;
 }
 
 float Physics2D_Circle::GetBiggerScaleAxes()

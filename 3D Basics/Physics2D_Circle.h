@@ -15,12 +15,10 @@ public:
 	// Overrides the Transform based on physics
 	void Update();
 
-	b2Body* GetRigidBody() const;
-
 private:
 	float GetBiggerScaleAxes();
 
-	b2Body * rigidBody = NULL;
+	b2Body * body = NULL;
 	GameObject * owner = NULL;
 };
 

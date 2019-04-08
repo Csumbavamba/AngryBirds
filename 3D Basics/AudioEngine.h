@@ -19,7 +19,7 @@ public:
 
 	void CreateSound(AudioSound * sound);
 	void ReleaseSound(AudioSound * sound);
-	int PlaySound(AudioSound * sound, glm::vec3 position, float volumeDB);
+	int PlaySound(AudioSound * sound, glm::vec3& position, float volumeDB);
 	void StopSound(AudioSound * sound);
 
 	void SetChannel3DPosition(int channelID, const glm::vec3& position);

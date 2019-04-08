@@ -1,7 +1,7 @@
 #include "Scene.h"
 #include "Utility.h"
 #include "Camera.h"
-
+#include "GameObject.h"
 
 Scene::Scene()
 {
@@ -40,6 +40,12 @@ bool Scene::IsActiveScene() const
 void Scene::SetIsActiveScene(bool isActiveScene)
 {
 	this->isActiveScene = isActiveScene;
+
+	// Set all GameObjects active
+	for(GameObject * gameObject : gameObjects)
+	{
+		gameObject->SetIsActive(isActiveScene);
+	}
 }
 
 std::string Scene::GetSceneName() const

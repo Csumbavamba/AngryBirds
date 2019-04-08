@@ -48,10 +48,10 @@ Physics2D::Physics2D()
 	world = new b2World(gravity);
 
 	timeStep = 1.0f / 100.0f;
-	velocityIterations = 8;
-	positionIterations = 3;
+	velocityIterations = 6;
+	positionIterations = 2;
 
-	pixelsPerMeter = 50.0f;
+	pixelsPerMeter = 25.0f;
 }
 
 
