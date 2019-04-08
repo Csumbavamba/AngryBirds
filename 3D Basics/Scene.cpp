@@ -16,9 +16,6 @@ Scene::Scene()
 	{
 		this->mainCamera = new Camera(PERSPECTIVE);
 	}
-	
-
-	mainCamera->Initialise();
 }
 
 Scene::~Scene()
@@ -27,9 +24,32 @@ Scene::~Scene()
 	mainCamera = NULL;
 }
 
+void Scene::Initialise()
+{
+	mainCamera->Initialise();
+
+	for (GameObject * gameObject : gameObjects)
+	{
+		gameObject->Initialise();
+	}
+}
+
+void Scene::Render(GLuint program)
+{
+	for (GameObject * gameObject : gameObjects)
+	{
+		gameObject->Render(program);
+	}
+}
+
 void Scene::Update(float deltaTime)
 {
 	mainCamera->Update(deltaTime);
+
+	for (GameObject * gameObject : gameObjects)
+	{
+		gameObject->Update(deltaTime);
+	}
 }
 
 bool Scene::IsActiveScene() const

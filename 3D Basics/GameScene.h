@@ -3,7 +3,7 @@
 
 class DynamicBox;
 class DynamicCircle;
-class StaticBox;
+class Ground;
 
 class GameScene :
 	public Scene
@@ -13,7 +13,6 @@ public:
 	virtual ~GameScene();
 
 	virtual void Initialise() override;
-	virtual void Render(GLuint program) override;
 	virtual void Update(float deltaTime) override;
 
 private:
@@ -21,6 +20,6 @@ private:
 	DynamicBox * testBox = NULL;
 	DynamicBox * testBox2 = NULL;
 	DynamicCircle * testCircle = NULL;
-	StaticBox * ground = NULL;
+	Ground * ground = NULL;
 };
 

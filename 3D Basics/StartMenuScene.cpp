@@ -24,12 +24,9 @@ StartMenuScene::~StartMenuScene()
 
 void StartMenuScene::Initialise()
 {
+	Scene::Initialise();
 }
 
-void StartMenuScene::Render(GLuint program)
-{
-	startMenu->Render(program);
-}
 
 void StartMenuScene::Update(float deltaTime)
 {
