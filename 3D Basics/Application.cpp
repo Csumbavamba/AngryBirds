@@ -34,7 +34,7 @@ Application::Application()
 	scenes.push_back(gameScene);
 	scenes.push_back(level1);
 
-	backgroundMusic = new AudioSound("Audio/Moria-Music.mp3", LOOPING);
+	backgroundMusic = new AudioSound("Audio/AngryBirdsTheme.mp3", LOOPING);
 
 	SceneManager::AddScenes(scenes);
 }
@@ -78,7 +78,7 @@ void Application::PlayGame(int argc, char ** argv)
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(1024, 768);
-	glutCreateWindow("Angry Birds - by Zsombi");
+	glutCreateWindow("Angry Birds - by Tom and kinda Zsombi");
 
 	glClearColor(1.0, 0.0, 0.0, 1.0); // Clear Window
 
@@ -132,7 +132,9 @@ void Application::Initialise()
 		scene->Initialise();
 	}
 
-	// backgroundMusic->PlaySound();
+	
+	backgroundMusic->PlaySound();
+	backgroundMusic->SetVolume(0.1f);
 }
 
 void Application::Render()

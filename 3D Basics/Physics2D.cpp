@@ -47,7 +47,7 @@ Physics2D::Physics2D()
 	gravity = b2Vec2(0.0, -10.0f);
 	world = new b2World(gravity);
 
-	timeStep = 1.0f / 600.0f;
+	timeStep = 1.0f / 100.0f;
 	velocityIterations = 6;
 	positionIterations = 2;
 

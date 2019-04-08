@@ -145,6 +145,9 @@
     <ClCompile Include="AudioSystem.cpp" />
     <ClCompile Include="AudioQueue.cpp" />
     <ClCompile Include="AudioSound.cpp" />
+    <ClCompile Include="BigBird.cpp" />
+    <ClCompile Include="Bird.cpp" />
+    <ClCompile Include="Catapult.cpp" />
     <ClCompile Include="DynamicBox.cpp" />
     <ClCompile Include="DynamicCircle.cpp" />
     <ClCompile Include="FileWriting.cpp" />
@@ -184,12 +187,16 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="UI_Text.cpp" />
     <ClCompile Include="Utility.cpp" />
+    <ClCompile Include="YellowBird.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AudioEngine.h" />
     <ClInclude Include="AudioQueue.h" />
     <ClInclude Include="AudioSound.h" />
     <ClInclude Include="AudioSystem.h" />
+    <ClInclude Include="BigBird.h" />
+    <ClInclude Include="Bird.h" />
+    <ClInclude Include="Catapult.h" />
     <ClInclude Include="DynamicBox.h" />
     <ClInclude Include="DynamicCircle.h" />
     <ClInclude Include="FileWriting.h" />
@@ -229,6 +236,7 @@
     <ClInclude Include="Transform.h" />
     <ClInclude Include="UI_Text.h" />
     <ClInclude Include="Utility.h" />
+    <ClInclude Include="YellowBird.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs" />
