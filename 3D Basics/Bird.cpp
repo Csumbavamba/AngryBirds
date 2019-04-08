@@ -51,10 +51,42 @@ void Bird::Update(float deltaTime)
 
 void Bird::ApplyImpulse(glm::vec2& impulseVector)
 {
+	physicsBody->GetRigidBody()->SetLinearVelocity(b2Vec2(0, 0));
+	physicsBody->GetRigidBody()->SetAngularVelocity(0);
 	b2Vec2 force = b2Vec2(impulseVector.x, impulseVector.y);
 	b2Vec2 point = b2Vec2(Physics2D::PixelsToBox2DMeters(this->transform.position.x),
 						  Physics2D::PixelsToBox2DMeters(this->transform.position.z));
 
 	physicsBody->GetRigidBody()->ApplyLinearImpulse(force, point, true); 
 
+}
+
+void Bird::SetIsInCatapult(bool isInCatapult)
+{
+	inCatapult = isInCatapult;
+}
+
+bool Bird::GetIsInCatapult()
+{
+	return inCatapult;
+}
+
+void Bird::SetIsCurrentBird(bool currentBird)
+{
+	this->currentBird = currentBird;
+}
+
+bool Bird::GetIsCurrentBird()
+{
+	return currentBird;
+}
+
+b2Vec2 Bird::GetRigidBodyPosition()
+{
+	return physicsBody->GetRigidBody()->GetTransform().p;
+}
+
+void Bird::SetRigidBodyPosition(b2Vec2 position)
+{
+	physicsBody->GetRigidBody()->SetTransform(position, physicsBody->GetRigidBody()->GetAngle());
 }

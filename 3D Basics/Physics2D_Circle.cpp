@@ -29,7 +29,6 @@ void Physics2D_Circle::Initialise(b2BodyType type)
 	// Create the body based on the body definition
 	rigidBody = Physics2D::CreateBody(bodyDef);
 
-
 	// Create Circle shape
 	b2CircleShape circle;
 

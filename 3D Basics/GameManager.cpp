@@ -129,7 +129,7 @@ void GameManager::Initialise()
 		scene->Initialise();
 	}
 
-	backgroundMusic->PlaySound();
+	//backgroundMusic->PlaySound();
 }
 
 void GameManager::Render()

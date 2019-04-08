@@ -16,6 +16,8 @@ public:
 	void AddBird(Bird* bird);
 
 	void UpdateBirdPosition();
+	void GainControlOfBird();
+	void FireBird();
 
 private:
 	Mesh2D_Quad * mesh = NULL;
@@ -24,6 +26,14 @@ private:
 	int birdCount; 
 	std::vector<Bird*> vectorOfBirds;
 
+	float maximumPullDistance = -220;
+	float maximumPullHeight = -100;
+
+	glm::vec2 newPosition;
+
+	glm::vec2 basePosition = glm::vec2(-240, -120);
+		
+	//glm::vec2 
 
 };
 
