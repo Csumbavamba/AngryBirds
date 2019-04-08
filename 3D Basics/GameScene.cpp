@@ -4,6 +4,8 @@
 #include "DynamicCircle.h"
 #include "Utility.h"
 #include "Physics2D.h"
+#include "Bird.h"
+#include "Catapult.h"
 
 
 GameScene::GameScene()
@@ -14,15 +16,24 @@ GameScene::GameScene()
 	testBox2 = new DynamicBox(mainCamera);
 	ground = new StaticBox(mainCamera);
 	testCircle = new DynamicCircle(mainCamera);
+	testBird = new Bird(mainCamera);
+	catapult = new Catapult(mainCamera);
 
 	testBox->transform.rotation.y = 50.0f;
 	testBox->transform.position.z += 50.0f;
 
 	testCircle->transform.position.z += 200.0f;
 
+	testBird->transform.position.z += 300.0f;
+
 	ground->transform.scale.x *= 5.0f;
 	ground->transform.position.z = -300.0f;
+	
 
+	catapult->transform.position.x = 250.0f;
+	catapult->transform.position.z = -220.0f;
+	catapult->transform.scale *= 6;
+	//catapult->transform.rotation. = 180.0f;
 	
 }
 
@@ -40,6 +51,12 @@ GameScene::~GameScene()
 
 	delete ground;
 	ground = NULL;
+
+	delete testBird;
+	testBird = NULL;
+
+	delete catapult;
+	catapult = NULL;
 }
 
 void GameScene::Initialise()
@@ -48,6 +65,10 @@ void GameScene::Initialise()
 	testBox2->Initialise();
 	testCircle->Initialise();
 	ground->Initialise();
+	testBird->Initialise();
+	catapult->Initialise();
+
+	catapult->AddBird(testBird);
 }
 
 void GameScene::Render(GLuint program)
@@ -56,6 +77,8 @@ void GameScene::Render(GLuint program)
 	testBox2->Render(program);
 	testCircle->Render(program);
 	ground->Render(program);
+	testBird->Render(program);
+	catapult->Render(program);
 }
 
 void GameScene::Update(float deltaTime)
@@ -68,4 +91,7 @@ void GameScene::Update(float deltaTime)
 	testBox2->Update(deltaTime);
 	testCircle->Update(deltaTime);
 	ground->Update(deltaTime);
+
+	testBird->Update(deltaTime);
+	catapult->Update(deltaTime);
 }

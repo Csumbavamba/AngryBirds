@@ -130,6 +130,10 @@
     <ClCompile Include="Physics2D_Circle.cpp">
       <Filter>Source\Engine\Physics\2D</Filter>
     </ClCompile>
+    <ClCompile Include="Bird.cpp">
+      <Filter>Source\Angry Birds\Birds</Filter>
+    </ClCompile>
+    <ClCompile Include="Catapult.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -261,6 +265,10 @@
     <ClInclude Include="DynamicCircle.h">
       <Filter>Header Files\Angry Birds</Filter>
     </ClInclude>
+    <ClInclude Include="Bird.h">
+      <Filter>Header Files\Angry Birds\Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="Catapult.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">
@@ -387,6 +395,12 @@
     </Filter>
     <Filter Include="Resources\Shaders\Fragment">
       <UniqueIdentifier>{5d6ec662-e95b-466c-be42-cdbfbd214bd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Angry Birds\Birds">
+      <UniqueIdentifier>{e1cc4be3-d47d-4142-b547-15569423bc80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Angry Birds\Birds">
+      <UniqueIdentifier>{2a8895f1-a912-4c0b-a170-50c8ca4b1cb6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

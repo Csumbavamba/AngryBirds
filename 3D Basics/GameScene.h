@@ -3,7 +3,9 @@
 
 class DynamicBox;
 class DynamicCircle;
+class Bird;
 class StaticBox;
+class Catapult;
 
 class GameScene :
 	public Scene
@@ -21,6 +23,10 @@ private:
 	DynamicBox * testBox = NULL;
 	DynamicBox * testBox2 = NULL;
 	DynamicCircle * testCircle = NULL;
+
+	Bird * testBird = NULL;
 	StaticBox * ground = NULL;
+
+	Catapult * catapult = NULL;
 };
 

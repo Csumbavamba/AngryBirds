@@ -145,6 +145,8 @@
     <ClCompile Include="AudioSystem.cpp" />
     <ClCompile Include="AudioQueue.cpp" />
     <ClCompile Include="AudioSound.cpp" />
+    <ClCompile Include="Bird.cpp" />
+    <ClCompile Include="Catapult.cpp" />
     <ClCompile Include="DynamicBox.cpp" />
     <ClCompile Include="DynamicCircle.cpp" />
     <ClCompile Include="FileWriting.cpp" />
@@ -188,6 +190,8 @@
     <ClInclude Include="AudioQueue.h" />
     <ClInclude Include="AudioSound.h" />
     <ClInclude Include="AudioSystem.h" />
+    <ClInclude Include="Bird.h" />
+    <ClInclude Include="Catapult.h" />
     <ClInclude Include="DynamicBox.h" />
     <ClInclude Include="DynamicCircle.h" />
     <ClInclude Include="FileWriting.h" />

@@ -31,7 +31,7 @@ GameMenu::GameMenu(Camera * mainCamera)
 	buttons[buttonSelected]->SetIsSelected(true);
 	
 
-	backgroundImage = new UI_Image(mainCamera, "Sprites/DwarfBackground2.jpg", Utility::GetScreenSize());
+	backgroundImage = new UI_Image(mainCamera, "Sprites/MenuScreen.jpg", Utility::GetScreenSize());
 	clickSound = new AudioSound("Audio/Click.wav", DEFAULT);
 	swapSound = new AudioSound("Audio/Click2.wav", DEFAULT);
 }
