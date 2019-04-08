@@ -1,6 +1,6 @@
 #include "GameScene.h"
 #include "DynamicBox.h"
-#include "StaticBox.h"
+#include "Ground.h"
 #include "DynamicCircle.h"
 #include "Utility.h"
 #include "Physics2D.h"
@@ -12,7 +12,7 @@ GameScene::GameScene()
 
 	testBox = new DynamicBox(mainCamera);
 	testBox2 = new DynamicBox(mainCamera);
-	ground = new StaticBox(mainCamera);
+	ground = new Ground(mainCamera);
 	testCircle = new DynamicCircle(mainCamera);
 
 	gameObjects.push_back(testBox);
@@ -36,34 +36,18 @@ GameScene::GameScene()
 
 GameScene::~GameScene()
 {
-	delete testBox;
-	testBox = NULL;
-
-	delete testBox2;
-	testBox2 = NULL;
-
-	delete testCircle;
-	testCircle = NULL;
-
-	delete ground;
-	ground = NULL;
+	for (GameObject * gameObject : gameObjects)
+	{
+		delete gameObject;
+		gameObject = NULL;
+	}
 }
 
 void GameScene::Initialise()
 {
-	testBox->Initialise();
-	testBox2->Initialise();
-	testCircle->Initialise();
-	ground->Initialise();
+	Scene::Initialise();
 }
 
-void GameScene::Render(GLuint program)
-{
-	testBox->Render(program);
-	testBox2->Render(program);
-	testCircle->Render(program);
-	ground->Render(program);
-}
 
 void GameScene::Update(float deltaTime)
 {
@@ -71,8 +55,4 @@ void GameScene::Update(float deltaTime)
 
 	Physics2D::Update();
 
-	testBox->Update(deltaTime);
-	testBox2->Update(deltaTime);
-	testCircle->Update(deltaTime);
-	ground->Update(deltaTime);
 }

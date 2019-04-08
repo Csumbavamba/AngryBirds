@@ -19,6 +19,7 @@ public:
 
 	virtual void Initialise();
 	virtual void Render(GLuint program) = 0;
+	virtual void Update(float deltaTime) {};
 
 	void SetCamera(Camera * camera);
 	

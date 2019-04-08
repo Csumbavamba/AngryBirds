@@ -109,9 +109,6 @@
     <ClCompile Include="Physics2D.cpp">
       <Filter>Source\Engine\Physics\2D</Filter>
     </ClCompile>
-    <ClCompile Include="StaticBox.cpp">
-      <Filter>Source\Angry Birds</Filter>
-    </ClCompile>
     <ClCompile Include="DynamicBox.cpp">
       <Filter>Source\Angry Birds</Filter>
     </ClCompile>
@@ -121,13 +118,20 @@
     <ClCompile Include="DynamicCircle.cpp">
       <Filter>Source\Angry Birds</Filter>
     </ClCompile>
-    <ClCompile Include="Plank.cpp" />
-    <ClCompile Include="Level1.cpp" />
     <ClCompile Include="Application.cpp">
       <Filter>Source\Angry Birds</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsBody2D.cpp">
       <Filter>Source\Engine\Physics\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>Source\Angry Birds</Filter>
+    </ClCompile>
+    <ClCompile Include="Plank.cpp">
+      <Filter>Source\Angry Birds</Filter>
+    </ClCompile>
+    <ClCompile Include="Level1.cpp">
+      <Filter>Source\Angry Birds\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -242,22 +246,26 @@
     <ClInclude Include="DynamicBox.h">
       <Filter>Header Files\Angry Birds</Filter>
     </ClInclude>
-    <ClInclude Include="StaticBox.h">
-      <Filter>Header Files\Angry Birds</Filter>
-    </ClInclude>
     <ClInclude Include="FileWriting.h">
       <Filter>Stash</Filter>
     </ClInclude>
     <ClInclude Include="DynamicCircle.h">
       <Filter>Header Files\Angry Birds</Filter>
     </ClInclude>
-    <ClInclude Include="Plank.h" />
-    <ClInclude Include="Level1.h" />
     <ClInclude Include="Application.h">
       <Filter>Header Files\Angry Birds</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsBody2D.h">
       <Filter>Header Files\Engine\Physics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="Plank.h">
+      <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="Level1.h">
+      <Filter>Header Files\Angry Birds\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

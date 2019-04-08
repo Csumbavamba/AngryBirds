@@ -13,7 +13,7 @@ public:
 	virtual ~StartMenuScene();
 
 	virtual void Initialise() override;
-	virtual void Render(GLuint program) override;
+	//virtual void Render(GLuint program) override;
 	virtual void Update(float deltaTime) override;
 
 private:

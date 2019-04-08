@@ -15,11 +15,11 @@ class Scene
 {
 public:
 
-	Scene();
+	
 	virtual~Scene();
 
-	virtual void Initialise() = 0;
-	virtual void Render(GLuint program) = 0;
+	virtual void Initialise();
+	virtual void Render(GLuint program);
 	virtual void Update(float deltaTime);
 
 	bool IsActiveScene() const;
@@ -28,13 +28,13 @@ public:
 	std::string GetSceneName() const;
 
 protected:
+	Scene();
 
 	bool isActiveScene = false;
 	Camera * mainCamera = NULL;
 	std::string sceneName = ""; // TODO Create method to get this by code (without the .cpp or .h
 
 	std::vector<GameObject*> gameObjects;
-
 
 };
 

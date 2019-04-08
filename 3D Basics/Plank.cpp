@@ -11,7 +11,7 @@ Plank::Plank(Camera * mainCamera)
 	physicsBody = new PhysicsBody2D(this);
 	
 	mesh->GetTexture()->SetTexturePath("Sprites/Plank.jpg");
-	transform.scale.z *= 3.0f;
+	transform.scale.z *= 5.0f;
 }
 
 

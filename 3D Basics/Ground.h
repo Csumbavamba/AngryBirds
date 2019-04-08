@@ -4,16 +4,16 @@
 class Mesh2D_Quad;
 
 
-class StaticBox :
+class Ground :
 	public GameObject
 {
 public:
-	StaticBox(Camera * mainCamera);
-	virtual ~StaticBox();
+	Ground(Camera * mainCamera);
+	virtual ~Ground();
 
 	virtual void Initialise() override;
 	virtual void Render(GLuint program) override;
-	virtual void Update(float deltaTime);
+	virtual void Update(float deltaTime) override;
 
 private:
 	Mesh2D_Quad * mesh = NULL;

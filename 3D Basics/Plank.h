@@ -12,7 +12,7 @@ public:
 
 	virtual void Initialise() override;
 	virtual void Render(GLuint program) override;
-	virtual void Update(float deltaTime);
+	virtual void Update(float deltaTime) override;
 
 private:
 	Mesh2D_Quad * mesh = NULL;

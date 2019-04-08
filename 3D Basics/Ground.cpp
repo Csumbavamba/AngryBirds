@@ -1,17 +1,22 @@
-#include "StaticBox.h"
+#include "Ground.h"
 #include "Mesh2D_Quad.h"
 #include "PhysicsBody2D.h"
+#include "Texture.h"
 
-StaticBox::StaticBox(Camera * mainCamera)
+Ground::Ground(Camera * mainCamera)
 {
 	camera = mainCamera;
 
 	mesh = new Mesh2D_Quad(this);
 	physicsBody = new PhysicsBody2D(this); // TODO make this into a factory
+
+	mesh->GetTexture()->SetTexturePath("Sprites/Grass.png");
+	transform.scale.x *= 50.0f;
+	transform.scale.z *= 3.0f;
 	
 }
 
-StaticBox::~StaticBox()
+Ground::~Ground()
 {
 	delete mesh;
 	mesh = NULL;
@@ -21,7 +26,7 @@ StaticBox::~StaticBox()
 
 }
 
-void StaticBox::Initialise()
+void Ground::Initialise()
 {
 	mesh->Initialise();
 
@@ -29,7 +34,7 @@ void StaticBox::Initialise()
 	physicsBody->AddBoxCollider();
 }
 
-void StaticBox::Render(GLuint program)
+void Ground::Render(GLuint program)
 {
 	if (isActive)
 	{
@@ -37,7 +42,7 @@ void StaticBox::Render(GLuint program)
 	}
 }
 
-void StaticBox::Update(float deltaTime)
+void Ground::Update(float deltaTime)
 {
 	if (isActive)
 	{
