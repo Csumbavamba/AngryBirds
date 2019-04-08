@@ -34,7 +34,7 @@ Application::Application()
 	scenes.push_back(gameScene);
 	scenes.push_back(level1);
 
-	backgroundMusic = new AudioSound("Audio/Moria-Music.mp3", LOOPING);
+	backgroundMusic = new AudioSound("Audio/AngryBirdsTheme.mp3", LOOPING);
 
 	SceneManager::AddScenes(scenes);
 }
@@ -132,7 +132,9 @@ void Application::Initialise()
 		scene->Initialise();
 	}
 
-	// backgroundMusic->PlaySound();
+	
+	backgroundMusic->PlaySound();
+	backgroundMusic->SetVolume(0.1f);
 }
 
 void Application::Render()

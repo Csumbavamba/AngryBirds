@@ -133,6 +133,12 @@
       <Filter>Source\Angry Birds\Birds</Filter>
     </ClCompile>
     <ClCompile Include="Catapult.cpp" />
+    <ClCompile Include="YellowBird.cpp">
+      <Filter>Source\Angry Birds\Birds</Filter>
+    </ClCompile>
+    <ClCompile Include="BigBird.cpp">
+      <Filter>Source\Angry Birds\Birds</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -267,6 +273,12 @@
       <Filter>Header Files\Angry Birds\Birds</Filter>
     </ClInclude>
     <ClInclude Include="Catapult.h" />
+    <ClInclude Include="YellowBird.h">
+      <Filter>Header Files\Angry Birds\Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="BigBird.h">
+      <Filter>Header Files\Angry Birds\Birds</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">

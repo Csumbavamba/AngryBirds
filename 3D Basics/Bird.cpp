@@ -1,15 +1,24 @@
 #include "Bird.h"
 #include "Mesh2D_Quad.h"
-#include "Physics2D_Circle.h"
+#include "PhysicsBody2D.h"
 #include "Texture.h"
 #include "Input.h"
+#include "AudioSound.h"
+#include "AudioEngine.h"
 
+
+Bird::Bird()
+{
+	mesh = new Mesh2D_Quad(this);
+	physicsBody = new PhysicsBody2D(this);
+}
 
 Bird::Bird(Camera * mainCamera)
 {
 	this->camera = mainCamera;
 	mesh = new Mesh2D_Quad(this);
-	physicsBody = new Physics2D_Circle(this);
+	physicsBody = new PhysicsBody2D(this);
+	birdCry = new AudioSound("Audio/RedBirdCry.mp3", DEFAULT);
 
 }
 
@@ -28,7 +37,8 @@ void Bird::Initialise()
 	mesh->GetTexture()->SetTexturePath("Sprites/RedBird.png");
 
 	mesh->Initialise();
-	physicsBody->Initialise(b2_dynamicBody);
+	physicsBody->AddRigidBody(b2_dynamicBody);
+	physicsBody->AddCircleCollider();
 }
 
 void Bird::Render(GLuint program)
@@ -42,10 +52,10 @@ void Bird::Update(float deltaTime)
 
 	physicsBody->Update();
 	
-	if (Input::GetKeyState('p') == DOWN_FIRST)
-	{
-		ApplyImpulse(testVector);
-	}
+	//if (Input::GetKeyState('p') == DOWN_FIRST)
+	//{
+	//	ApplyImpulse(testVector);
+	//}
 	
 }
 
@@ -59,6 +69,11 @@ void Bird::ApplyImpulse(glm::vec2& impulseVector)
 
 	physicsBody->GetRigidBody()->ApplyLinearImpulse(force, point, true); 
 
+	physicsBody->GetRigidBody()->SetAngularVelocity(0);
+
+
+	birdCry->PlaySound();
+
 }
 
 void Bird::SetIsInCatapult(bool isInCatapult)
@@ -66,7 +81,7 @@ void Bird::SetIsInCatapult(bool isInCatapult)
 	inCatapult = isInCatapult;
 }
 
-bool Bird::GetIsInCatapult()
+bool Bird::GetIsInCatapult() const
 {
 	return inCatapult;
 }
@@ -76,7 +91,7 @@ void Bird::SetIsCurrentBird(bool currentBird)
 	this->currentBird = currentBird;
 }
 
-bool Bird::GetIsCurrentBird()
+bool Bird::GetIsCurrentBird() const
 {
 	return currentBird;
 }

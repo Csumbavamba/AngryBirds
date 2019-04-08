@@ -4,8 +4,11 @@
 class DynamicBox;
 class DynamicCircle;
 class Bird;
+class YellowBird;
+class BigBird;
 class StaticBox;
 class Catapult;
+class UI_Image;
 
 class GameScene :
 	public Scene
@@ -25,6 +28,13 @@ private:
 	DynamicCircle * testCircle = NULL;
 
 	Bird * testBird = NULL;
+	Bird * redBird2 = NULL;
+	BigBird * redBird3 = NULL;
+	YellowBird * redBird4 = NULL;
+
+	UI_Image * background = NULL;
+
+
 	StaticBox * ground = NULL;
 
 	Catapult * catapult = NULL;
