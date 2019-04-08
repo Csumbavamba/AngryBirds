@@ -10,7 +10,7 @@ Physics2D_Box::Physics2D_Box(GameObject * owner)
 
 Physics2D_Box::~Physics2D_Box()
 {
-	body = NULL;
+	rigidBody = NULL;
 }
 
 void Physics2D_Box::Initialise(b2BodyType type)
@@ -24,21 +24,27 @@ void Physics2D_Box::Initialise(b2BodyType type)
 	bodyDef.angle = Transform::ToRadians(this->owner->transform.rotation.y);
 
 	// Create the body based on the body definition
-	body = Physics2D::CreateBody(bodyDef);
+	rigidBody = Physics2D::CreateBody(bodyDef);
 
-	// Setup the width and height of the box
-	b2PolygonShape box;
-	box.SetAsBox(
-		Physics2D::PixelsToBox2DMeters(this->owner->transform.scale.x / 2.0f),
-		Physics2D::PixelsToBox2DMeters(this->owner->transform.scale.z / 2.0f));
+	AddBoxCollider(5.0f, 0.3f);
+}
+
+b2Body * Physics2D_Box::GetRigidBody() const
+{
+	return rigidBody;
+}
+
+void Physics2D_Box::AddBoxCollider(float32 density, float32 friction)
+{
+	b2PolygonShape box = CreateBoxCollider();
 
 	// Switch between what's the type
-	switch (type)
+	switch (rigidBody->GetType())
 	{
 	case b2_staticBody:
 	{
 		// Create a static fixture (0.0f density)
-		body->CreateFixture(&box, 0.0f);
+		rigidBody->CreateFixture(&box, 0.0f);
 		break;
 	}
 	case b2_dynamicBody:
@@ -46,11 +52,11 @@ void Physics2D_Box::Initialise(b2BodyType type)
 		// Create a dynamic fixture - base values on density and friction
 		b2FixtureDef fixtureDef;
 		fixtureDef.shape = &box;
-		fixtureDef.density = 1.0f;
-		fixtureDef.friction = 0.3f;
+		fixtureDef.density = density;
+		fixtureDef.friction = friction;
 
 		// Add fixture
-		body->CreateFixture(&fixtureDef);
+		rigidBody->CreateFixture(&fixtureDef);
 		break;
 	}
 	default: // STATIC
@@ -61,14 +67,26 @@ void Physics2D_Box::Initialise(b2BodyType type)
 	}
 }
 
+b2PolygonShape Physics2D_Box::CreateBoxCollider()
+{
+	// Setup the width and height of the box
+	b2PolygonShape box;
+	box.SetAsBox(
+		Physics2D::PixelsToBox2DMeters(this->owner->transform.scale.x / 2.0f),
+		Physics2D::PixelsToBox2DMeters(this->owner->transform.scale.z / 2.0f));
+
+	return box;
+}
+
+
 void Physics2D_Box::Update()
 {
 	// Update the transform in case it's a dynamic body - otherwise the gameobject should update it??
-	if (body->GetType() == b2_dynamicBody)
+	if (rigidBody->GetType() == b2_dynamicBody)
 	{
 		// Get transform and rotation values from box2D
-		b2Vec2 position = body->GetPosition();
-		float32 angle = body->GetAngle(); // This is in radians
+		b2Vec2 position = rigidBody->GetPosition();
+		float32 angle = rigidBody->GetAngle(); // This is in radians
 
 		// Update position
 		this->owner->transform.position.x = Physics2D::Box2DMetersToPixels(position.x);

@@ -17,6 +17,7 @@ GameScene::GameScene()
 
 	testBox->transform.rotation.y = 50.0f;
 	testBox->transform.position.z += 50.0f;
+	testBox->transform.scale.z *= 2.0f;
 
 	testCircle->transform.position.z += 200.0f;
 

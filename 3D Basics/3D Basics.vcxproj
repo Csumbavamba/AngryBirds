@@ -150,10 +150,12 @@
     <ClCompile Include="FileWriting.cpp" />
     <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Level1.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Physics2D.cpp" />
     <ClCompile Include="Physics2D_Box.cpp" />
     <ClCompile Include="Physics2D_Circle.cpp" />
+    <ClCompile Include="Plank.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="StartMenuScene.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -164,7 +166,7 @@
     <ClCompile Include="Collider_Sphere.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CubeMap.cpp" />
-    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="UI_Button.cpp" />
     <ClCompile Include="Mesh_Model.cpp" />
@@ -193,9 +195,11 @@
     <ClInclude Include="FileWriting.h" />
     <ClInclude Include="GameMenu.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Level1.h" />
     <ClInclude Include="Physics2D.h" />
     <ClInclude Include="Physics2D_Box.h" />
     <ClInclude Include="Physics2D_Circle.h" />
+    <ClInclude Include="Plank.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="StartMenuScene.h" />
     <ClInclude Include="Scene.h" />
@@ -206,7 +210,7 @@
     <ClInclude Include="Collider_Sphere.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CubeMap.h" />
-    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Application.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="UI_Button.h" />
     <ClInclude Include="Skybox.h" />
