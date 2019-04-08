@@ -8,6 +8,7 @@
 #include "YellowBird.h"
 #include "BigBird.h"
 #include "UI_Image.h"
+#include "Utility.h"
 
 
 Level1::Level1()
@@ -27,13 +28,11 @@ Level1::Level1()
 	bigBird1 = new BigBird(mainCamera);
 	yellowBird1 = new YellowBird(mainCamera);
 	catapult = new Catapult(mainCamera);
-
-	background = new UI_Image(mainCamera, "Sprites/BackgroundImage.png", glm::vec2(800, 600));
+	background = new UI_Image(mainCamera, "Sprites/BackgroundImage.png", Utility::GetScreenSize());
 
 
 	// Add GameObjects to this list
 	gameObjects.push_back(background);
-
 	gameObjects.push_back(plankLeft);
 	gameObjects.push_back(plankRight);
 	gameObjects.push_back(plankRoof);
@@ -41,15 +40,13 @@ Level1::Level1()
 	gameObjects.push_back(ground);
 	gameObjects.push_back(pig);
 	gameObjects.push_back(topPig);
-	
-
 	gameObjects.push_back(redBird1);
 	gameObjects.push_back(redBird2);
 	gameObjects.push_back(bigBird1);
 	gameObjects.push_back(yellowBird1);
 	gameObjects.push_back(catapult);
 
-
+	// Setup Catapult
 	catapult->AddBird(redBird1);
 	catapult->AddBird(redBird2);
 	catapult->AddBird(bigBird1);
@@ -62,7 +59,6 @@ Level1::Level1()
 void Level1::SetupLevel()
 {
 	// Setup background
-	background->transform.scale *= 1.3;
 	background->transform.position.x += 250.0f;
 	background->transform.position.y = -10.0f;
 
@@ -132,5 +128,5 @@ void Level1::Update(float deltaTime)
 	// Calls should happen after this
 	Scene::Update(deltaTime);
 
-	Physics2D::Update();
+	Physics2D::Update(deltaTime);
 }

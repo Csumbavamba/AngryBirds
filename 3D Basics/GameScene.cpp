@@ -91,6 +91,6 @@ void GameScene::Update(float deltaTime)
 {
 	Scene::Update(deltaTime);
 
-	Physics2D::Update();
+	Physics2D::Update(deltaTime);
 
 }

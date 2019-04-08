@@ -12,7 +12,7 @@ public:
 	static float PixelsToBox2DMeters(float pixels);
 	static float Box2DMetersToPixels(float meters);
 
-	static void Update();
+	static void Update(float deltaTime);
 	static void ShutDown();
 
 private:

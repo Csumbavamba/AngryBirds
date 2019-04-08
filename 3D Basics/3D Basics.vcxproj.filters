@@ -137,13 +137,15 @@
     <ClCompile Include="Ground.cpp">
       <Filter>Source\Angry Birds</Filter>
     </ClCompile>
-    <ClCompile Include="Plank.cpp">
-      <Filter>Source\Angry Birds</Filter>
-    </ClCompile>
     <ClCompile Include="Level1.cpp">
       <Filter>Source\Angry Birds\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Pig.cpp" />
+    <ClCompile Include="Plank.cpp">
+      <Filter>Source\Angry Birds\Destructable</Filter>
+    </ClCompile>
+    <ClCompile Include="Pig.cpp">
+      <Filter>Source\Angry Birds\Destructable</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -282,13 +284,15 @@
     <ClInclude Include="Ground.h">
       <Filter>Header Files\Angry Birds</Filter>
     </ClInclude>
-    <ClInclude Include="Plank.h">
-      <Filter>Header Files\Angry Birds</Filter>
-    </ClInclude>
     <ClInclude Include="Level1.h">
       <Filter>Header Files\Angry Birds\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Pig.h" />
+    <ClInclude Include="Pig.h">
+      <Filter>Header Files\Angry Birds\Destructable</Filter>
+    </ClInclude>
+    <ClInclude Include="Plank.h">
+      <Filter>Header Files\Angry Birds\Destructable</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">
@@ -421,6 +425,12 @@
     </Filter>
     <Filter Include="Source\Angry Birds\Birds">
       <UniqueIdentifier>{2a8895f1-a912-4c0b-a170-50c8ca4b1cb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Angry Birds\Destructable">
+      <UniqueIdentifier>{7d0dbe79-fa43-4df2-a86c-68ed55053644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Angry Birds\Destructable">
+      <UniqueIdentifier>{a88ed0a8-82da-4ed2-a661-5f79e713a423}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

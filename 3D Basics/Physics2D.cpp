@@ -27,10 +27,10 @@ b2Body * Physics2D::CreateBody(b2BodyDef bodyDef)
 	return GetInstance()->world->CreateBody(&bodyDef);
 }
 
-void Physics2D::Update()
+void Physics2D::Update(float deltaTime)
 {
 	GetInstance()->world->Step(
-		GetInstance()->timeStep,
+		deltaTime, // Should not work but works
 		GetInstance()->velocityIterations,
 		GetInstance()->positionIterations);
 

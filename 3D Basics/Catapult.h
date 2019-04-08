@@ -32,8 +32,6 @@ private:
 	glm::vec2 newPosition;
 
 	glm::vec2 basePosition = glm::vec2(-240, -120);
-		
-	//glm::vec2 
 
 };
 
