@@ -8,6 +8,8 @@ StartMenuScene::StartMenuScene()
 {
 	startMenu = new GameMenu(mainCamera);
 
+	gameObjects.push_back(startMenu);
+
 	sceneName = "StartMenuScene"; // TODO Create method to get this from file
 
 }

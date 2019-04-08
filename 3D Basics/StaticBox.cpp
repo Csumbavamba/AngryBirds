@@ -1,13 +1,13 @@
 #include "StaticBox.h"
 #include "Mesh2D_Quad.h"
-#include "Physics2D_Box.h"
+#include "PhysicsBody2D.h"
 
 StaticBox::StaticBox(Camera * mainCamera)
 {
 	camera = mainCamera;
 
 	mesh = new Mesh2D_Quad(this);
-	physicsBody = new Physics2D_Box(this); // TODO make this into a factory
+	physicsBody = new PhysicsBody2D(this); // TODO make this into a factory
 	
 }
 
@@ -25,15 +25,22 @@ void StaticBox::Initialise()
 {
 	mesh->Initialise();
 
-	physicsBody->Initialise();
+	physicsBody->AddRigidBody();
+	physicsBody->AddBoxCollider();
 }
 
 void StaticBox::Render(GLuint program)
 {
-	mesh->Render(camera, program);
+	if (isActive)
+	{
+		mesh->Render(camera, program);
+	}
 }
 
 void StaticBox::Update(float deltaTime)
 {
-	mesh->Update();
+	if (isActive)
+	{
+		mesh->Update();
+	}
 }

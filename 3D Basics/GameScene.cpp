@@ -15,8 +15,15 @@ GameScene::GameScene()
 	ground = new StaticBox(mainCamera);
 	testCircle = new DynamicCircle(mainCamera);
 
+	gameObjects.push_back(testBox);
+	gameObjects.push_back(testBox2);
+	gameObjects.push_back(ground);
+	gameObjects.push_back(testCircle);
+
+
 	testBox->transform.rotation.y = 50.0f;
 	testBox->transform.position.z += 50.0f;
+	testBox->transform.scale.z *= 2.0f;
 
 	testCircle->transform.position.z += 200.0f;
 

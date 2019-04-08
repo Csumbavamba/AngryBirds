@@ -1,4 +1,4 @@
-#include "GameManager.h"
+#include "Application.h"
 
 #include "Camera.h"
 #include "ShaderLoader.h"
@@ -13,12 +13,13 @@
 #include "SceneManager.h"
 #include "StartMenuScene.h"
 #include "GameScene.h"
+#include "Level1.h"
 
 #pragma comment(lib, "Ws2_32.lib")
 
-GameManager * GameManager::instance = NULL;
+Application * Application::instance = NULL;
 
-GameManager::GameManager()
+Application::Application()
 {
 	deltaTime = 0.0f;
 
@@ -26,10 +27,12 @@ GameManager::GameManager()
 	startMenuScene = new StartMenuScene();
 	startMenuScene->SetIsActiveScene(true);
 	gameScene = new GameScene();
+	level1 = new Level1();
 	
 	// Push Scenes into the scene Holder
 	scenes.push_back(startMenuScene);
 	scenes.push_back(gameScene);
+	scenes.push_back(level1);
 
 	backgroundMusic = new AudioSound("Audio/Moria-Music.mp3", LOOPING);
 
@@ -37,7 +40,7 @@ GameManager::GameManager()
 }
 
 
-GameManager::~GameManager()
+Application::~Application()
 {
 	// Scenes
 	for (Scene * scene : scenes)
@@ -60,16 +63,16 @@ GameManager::~GameManager()
 	Utility::ShutDown();
 }
 
-GameManager * GameManager::GetInstance()
+Application * Application::GetInstance()
 {
 	if (instance == NULL)
 	{
-		instance = new GameManager();
+		instance = new Application();
 	}
 	return instance;;
 }
 
-void GameManager::PlayGame(int argc, char ** argv)
+void Application::PlayGame(int argc, char ** argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
@@ -109,13 +112,13 @@ void GameManager::PlayGame(int argc, char ** argv)
 	glutMotionFunc(Input::MouseActiveMove);
 	glutPassiveMotionFunc(Input::MousePassiveMove);
 
-	glutCloseFunc(GameManager::ShutDownGame);
+	glutCloseFunc(Application::ShutDownGame);
 	glutMainLoop();
 
 	return;
 }
 
-void GameManager::Initialise()
+void Application::Initialise()
 {
 	// Create Programs
 	program = ShaderLoader::GetInstance()->CreateProgram("VertexShader.vs", "FragmentShader.fs");
@@ -129,10 +132,10 @@ void GameManager::Initialise()
 		scene->Initialise();
 	}
 
-	backgroundMusic->PlaySound();
+	// backgroundMusic->PlaySound();
 }
 
-void GameManager::Render()
+void Application::Render()
 {
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 	glClearColor(1.0, 0.0, 0.0, 1.0); // clear red
@@ -147,7 +150,7 @@ void GameManager::Render()
 	glutSwapBuffers();
 }
 
-void GameManager::Update()
+void Application::Update()
 {
 	// Time Calculation
 	float currentTime = (float)glutGet(GLUT_ELAPSED_TIME);
@@ -168,7 +171,7 @@ void GameManager::Update()
 	glutPostRedisplay();
 }
 
-void GameManager::QuitGame()
+void Application::QuitGame()
 {
 	glutLeaveMainLoop();
 }
@@ -176,7 +179,7 @@ void GameManager::QuitGame()
 
 
 
-void GameManager::ShutDownGame()
+void Application::ShutDownGame()
 {
 	delete instance;
 	instance = NULL;

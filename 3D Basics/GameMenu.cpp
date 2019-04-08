@@ -5,7 +5,7 @@
 #include "Camera.h"
 #include "AudioSound.h"
 #include "Input.h"
-#include "GameManager.h"
+#include "Application.h"
 #include "SceneManager.h"
 
 #include "Utility.h"
@@ -145,12 +145,12 @@ void GameMenu::ActOnMenuChoice()
 {
 	if (startButton->IsClicked())
 	{
-		SceneManager::ChangeActiveScene("GameScene");
+		SceneManager::ChangeActiveScene("Level1");
 	}
 	else if (quitButton->IsClicked())
 	{
 		// Quit Application
-		GameManager::QuitGame();
+		Application::QuitGame();
 	}
 
 	Reset();

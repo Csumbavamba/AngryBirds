@@ -2,12 +2,13 @@
 #include "Camera.h"
 #include "Physics2D.h"
 #include "Utility.h"
+#include "PhysicsBody2D.h"
 
 
 GameObject::GameObject()
 {
 	isActive = true;
-	isPhysicsEnabled = true; // TODO set this to false by default
+	isPhysicsEnabled = false; // TODO set this to false by default
 
 	// TODO See if this works
 	if (Utility::GetGameMode() == GAMEMODE_2D)
@@ -33,6 +34,10 @@ void GameObject::SetCamera(Camera * camera)
 void GameObject::SetIsActive(bool isActive)
 {
 	this->isActive = isActive;
+
+	// Set the Physics as well - if there is physics added
+	if (physicsBody)
+		SetPhysicsEnabled(isActive);
 }
 
 bool GameObject::IsActive() const
@@ -48,4 +53,8 @@ bool GameObject::IsPhysicsEnabled() const
 void GameObject::SetPhysicsEnabled(bool isPhysicsEnabled)
 {
 	this->isPhysicsEnabled = isPhysicsEnabled;
+	
+	// Enable/Disable the rigidBody
+	physicsBody->GetRigidBody()->SetActive(isPhysicsEnabled);
+	
 }

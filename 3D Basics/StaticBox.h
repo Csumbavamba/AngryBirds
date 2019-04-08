@@ -2,7 +2,6 @@
 #include "GameObject.h"
 
 class Mesh2D_Quad;
-class Physics2D_Box;
 
 
 class StaticBox :
@@ -18,6 +17,5 @@ public:
 
 private:
 	Mesh2D_Quad * mesh = NULL;
-	Physics2D_Box * physicsBody = NULL;
 };
 

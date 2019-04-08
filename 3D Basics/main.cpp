@@ -1,6 +1,6 @@
 // Vertices and Textures
 
-#include "GameManager.h"
+#include "Application.h"
 // #include <vld.h>
 
 
@@ -8,7 +8,7 @@
 
 int main (int argc, char **argv)
 {
-	GameManager::PlayGame(argc, argv);
+	Application::PlayGame(argc, argv);
 
 	return 0;
 

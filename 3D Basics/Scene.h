@@ -5,8 +5,10 @@
 #include "Dependencies\freeglut\freeglut.h"
 
 #include <string>
+#include <vector>
 
 class Camera;
+class GameObject;
 
 
 class Scene
@@ -30,6 +32,9 @@ protected:
 	bool isActiveScene = false;
 	Camera * mainCamera = NULL;
 	std::string sceneName = ""; // TODO Create method to get this by code (without the .cpp or .h
+
+	std::vector<GameObject*> gameObjects;
+
 
 };
 

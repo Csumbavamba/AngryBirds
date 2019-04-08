@@ -14,13 +14,14 @@ class Scene;
 class StartMenuScene;
 class GameScene;
 class AudioSound;
+class Level1;
 
 
 
-class GameManager
+class Application
 {
 public:
-	static GameManager * GetInstance();
+	static Application * GetInstance();
 
 	static void PlayGame(int argc, char **argv);
 	void Initialise();
@@ -35,14 +36,14 @@ public:
 private:
 
 	// Singleton
-	GameManager();
-	~GameManager();
-	GameManager(const GameManager& copy) {};
-	GameManager& operator= (const GameManager& move) {};
+	Application();
+	~Application();
+	Application(const Application& copy) {};
+	Application& operator= (const Application& move) {};
 
 	static void ShutDownGame();
 
-	static GameManager * instance;
+	static Application * instance;
 	
 
 	GLuint program;
@@ -50,8 +51,9 @@ private:
 	// For deltatime
 	float previousTimeStamp;
 
-	StartMenuScene * startMenuScene = NULL;
-	GameScene * gameScene = NULL;
+	Scene * startMenuScene = NULL;
+	Scene * gameScene = NULL;
+	Scene * level1 = NULL;
 	
 
 	std::vector<Scene*> scenes;
