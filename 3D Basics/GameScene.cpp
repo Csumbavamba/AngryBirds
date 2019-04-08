@@ -1,6 +1,6 @@
 #include "GameScene.h"
 #include "DynamicBox.h"
-#include "StaticBox.h"
+#include "Ground.h"
 #include "DynamicCircle.h"
 #include "Utility.h"
 #include "Physics2D.h"
@@ -9,7 +9,8 @@
 #include "YellowBird.h"
 #include "BigBird.h"
 #include "UI_Image.h"
-
+#include "Input.h"
+#include "SceneManager.h"
 
 GameScene::GameScene()
 {
@@ -17,7 +18,7 @@ GameScene::GameScene()
 
 	testBox = new DynamicBox(mainCamera);
 	testBox2 = new DynamicBox(mainCamera);
-	ground = new StaticBox(mainCamera);
+	ground = new Ground(mainCamera);
 	testCircle = new DynamicCircle(mainCamera);
 	testBird = new Bird(mainCamera);
 	redBird2 = new Bird(mainCamera);
@@ -64,74 +65,18 @@ GameScene::GameScene()
 
 GameScene::~GameScene()
 {
-	delete testBox;
-	testBox = NULL;
-
-	delete testBox2;
-	testBox2 = NULL;
-
-	delete testCircle;
-	testCircle = NULL;
-
-	delete ground;
-	ground = NULL;
-
-	delete testBird;
-	testBird = NULL;
-
-	delete redBird2;
-	redBird2 = NULL;
-
-	delete redBird3;
-	redBird3 = NULL;
-
-	delete redBird4;
-	redBird4 = NULL;
-
-	delete catapult;
-	catapult = NULL;
-
-	delete background;
-	background = NULL;
+	for (GameObject * gameObject : gameObjects)
+	{
+		delete gameObject;
+		gameObject = NULL;
+	}
 }
 
 void GameScene::Initialise()
 {
-	testBox->Initialise();
-	testBox2->Initialise();
-	testCircle->Initialise();
-	ground->Initialise();
-	testBird->Initialise();
-	redBird2->Initialise();
-	redBird3->Initialise();
-	redBird4->Initialise();
-	catapult->Initialise();
-
-	background->Initialise();
-
-	catapult->AddBird(testBird);
-	catapult->AddBird(redBird2);
-	catapult->AddBird(redBird3);
-	catapult->AddBird(redBird4);
+	Scene::Initialise();
 }
 
-void GameScene::Render(GLuint program)
-{
-	background->Render(program);
-
-	testBox->Render(program);
-	testBox2->Render(program);
-	testCircle->Render(program);
-	ground->Render(program);
-	testBird->Render(program);
-	redBird2->Render(program);
-	redBird3->Render(program);
-	redBird4->Render(program);
-
-	
-
-	catapult->Render(program);
-}
 
 void GameScene::Update(float deltaTime)
 {
@@ -139,16 +84,9 @@ void GameScene::Update(float deltaTime)
 
 	Physics2D::Update();
 
-	testBox->Update(deltaTime);
-	testBox2->Update(deltaTime);
-	testCircle->Update(deltaTime);
-	ground->Update(deltaTime);
+	if (Input::GetKeyState('w') == DOWN_FIRST)
+	{
+		SceneManager::ChangeActiveScene("Level1");
+	}
 
-	testBird->Update(deltaTime);
-	redBird2->Update(deltaTime);
-	redBird3->Update(deltaTime);
-	redBird4->Update(deltaTime);
-	catapult->Update(deltaTime);
-
-	background->Update(deltaTime);
 }

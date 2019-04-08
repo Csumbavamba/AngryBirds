@@ -11,7 +11,8 @@ Plank::Plank(Camera * mainCamera)
 	physicsBody = new PhysicsBody2D(this);
 	
 	mesh->GetTexture()->SetTexturePath("Sprites/Plank.jpg");
-	transform.scale.z *= 3.0f;
+	transform.scale.z *= 2.0f;
+	transform.scale.x *= 0.5f;
 }
 
 
@@ -30,6 +31,8 @@ void Plank::Initialise()
 
 	physicsBody->AddRigidBody(b2_dynamicBody);
 	physicsBody->AddBoxCollider(20.0f, 0.8f);
+	physicsBody->GetRigidBody()->SetLinearDamping(0.9f);
+	physicsBody->GetRigidBody()->SetAngularDamping(0.9f);
 }
 
 void Plank::Render(GLuint program)

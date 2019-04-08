@@ -157,11 +157,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Physics2D.cpp" />
     <ClCompile Include="PhysicsBody2D.cpp" />
+    <ClCompile Include="Pig.cpp" />
     <ClCompile Include="Plank.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="StartMenuScene.cpp" />
     <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="StaticBox.cpp" />
+    <ClCompile Include="Ground.cpp" />
     <ClCompile Include="UI_Image.cpp" />
     <ClCompile Include="Collider_Box2D.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -204,11 +205,12 @@
     <ClInclude Include="Level1.h" />
     <ClInclude Include="Physics2D.h" />
     <ClInclude Include="PhysicsBody2D.h" />
+    <ClInclude Include="Pig.h" />
     <ClInclude Include="Plank.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="StartMenuScene.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="StaticBox.h" />
+    <ClInclude Include="Ground.h" />
     <ClInclude Include="UI_Image.h" />
     <ClInclude Include="Collider_Box2D.h" />
     <ClInclude Include="Camera.h" />
