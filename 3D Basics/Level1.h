@@ -4,6 +4,11 @@
 class Plank;
 class Ground;
 class Pig;
+class Bird;
+class YellowBird;
+class BigBird;
+class Catapult;
+class UI_Image;
 
 class Level1 :
 	public Scene
@@ -24,5 +29,11 @@ private:
 	Ground * ground = NULL;
 	Pig * pig = NULL;
 	Pig * topPig = NULL;
+	Bird * redBird1 = NULL;
+	Bird * redBird2 = NULL;
+	BigBird * bigBird1 = NULL;
+	YellowBird * yellowBird1 = NULL;
+	UI_Image * background = NULL;
+	Catapult * catapult = NULL;
 };
 

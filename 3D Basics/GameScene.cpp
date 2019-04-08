@@ -10,7 +10,7 @@
 #include "BigBird.h"
 #include "UI_Image.h"
 #include "Input.h"
-#include "SceneManager.h"
+
 
 GameScene::GameScene()
 {
@@ -30,6 +30,8 @@ GameScene::GameScene()
 
 	background->transform.scale *= 1.3;
 
+	gameObjects.push_back(background);
+
 	gameObjects.push_back(testBox);
 	gameObjects.push_back(testBox2);
 	gameObjects.push_back(ground);
@@ -43,6 +45,13 @@ GameScene::GameScene()
 	gameObjects.push_back(catapult);
 
 
+	catapult->AddBird(testBird);
+	catapult->AddBird(redBird2);
+	catapult->AddBird(redBird3);
+	catapult->AddBird(redBird4);
+	
+
+
 	testBox->transform.rotation.y = 50.0f;
 	testBox->transform.position.z += 50.0f;
 	testBox->transform.scale.z *= 2.0f;
@@ -52,7 +61,7 @@ GameScene::GameScene()
 	testBird->transform.position.z += 300.0f;
 
 	ground->transform.scale.x *= 5.0f;
-	ground->transform.position.z = -300.0f;
+	ground->transform.position.z = -380.0f;
 	
 
 	catapult->transform.position.x = 250.0f;
@@ -83,10 +92,5 @@ void GameScene::Update(float deltaTime)
 	Scene::Update(deltaTime);
 
 	Physics2D::Update();
-
-	if (Input::GetKeyState('w') == DOWN_FIRST)
-	{
-		SceneManager::ChangeActiveScene("Level1");
-	}
 
 }

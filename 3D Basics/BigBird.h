@@ -6,10 +6,10 @@ class BigBird : public Bird
 {
 public:
 	BigBird(Camera * mainCamera);
-	~BigBird();
+	virtual ~BigBird();
 
 	virtual void Initialise() override;
-	virtual void Update(float deltaTime);
+	virtual void Update(float deltaTime) override;
 
 	virtual void ApplyImpulse(glm::vec2& impulseVector);
 
