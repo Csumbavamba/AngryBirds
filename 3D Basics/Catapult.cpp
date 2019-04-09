@@ -124,8 +124,8 @@ void Catapult::FireBird()
 				float magnitude = Transform::GetDistance2D(basePosition, newPosition);
 				Utility::Print(magnitude);
 
-				impulseVector.x = -1.0f * (basePosition.x - newPosition.x) * 0.08f;
-				impulseVector.y = sqrt((pow(magnitude, 2) - pow((basePosition.x - newPosition.x), 2))) * 0.04f;
+				impulseVector.x = -1.0f * (basePosition.x - newPosition.x) * 0.08f * 30.0f;
+				impulseVector.y = sqrt((pow(magnitude, 2) - pow((basePosition.x - newPosition.x), 2))) * 0.04f * 30.0f;
 
 				Utility::Print(impulseVector.y);
 

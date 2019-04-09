@@ -29,6 +29,9 @@ public:
 	virtual b2Vec2 GetRigidBodyPosition();
 	virtual void SetRigidBodyPosition(b2Vec2 position);
 
+	// Mass * Velocity
+	virtual float GetMomentum();
+
 
 
 protected:

@@ -148,6 +148,7 @@
     <ClCompile Include="BigBird.cpp" />
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="Catapult.cpp" />
+    <ClCompile Include="Destructable.cpp" />
     <ClCompile Include="DynamicBox.cpp" />
     <ClCompile Include="DynamicCircle.cpp" />
     <ClCompile Include="FileWriting.cpp" />
@@ -157,6 +158,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Physics2D.cpp" />
     <ClCompile Include="PhysicsBody2D.cpp" />
+    <ClCompile Include="PhysicsContactListener.cpp" />
     <ClCompile Include="Pig.cpp" />
     <ClCompile Include="Plank.cpp" />
     <ClCompile Include="SceneManager.cpp" />
@@ -197,6 +199,7 @@
     <ClInclude Include="BigBird.h" />
     <ClInclude Include="Bird.h" />
     <ClInclude Include="Catapult.h" />
+    <ClInclude Include="Destructable.h" />
     <ClInclude Include="DynamicBox.h" />
     <ClInclude Include="DynamicCircle.h" />
     <ClInclude Include="FileWriting.h" />

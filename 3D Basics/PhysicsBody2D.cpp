@@ -6,6 +6,7 @@
 PhysicsBody2D::PhysicsBody2D(GameObject * owner)
 {
 	this->owner = owner;
+	isDestructable = false;
 }
 
 PhysicsBody2D::~PhysicsBody2D()
@@ -25,6 +26,8 @@ void PhysicsBody2D::AddRigidBody(b2BodyType type)
 
 	// Create the body based on the body definition
 	rigidBody = Physics2D::CreateBody(bodyDef);
+
+	rigidBody->SetUserData(this);
 
 	owner->SetPhysicsEnabled(true);
 
@@ -68,6 +71,22 @@ b2Body * PhysicsBody2D::GetRigidBody() const
 {
 	return rigidBody;
 }
+
+void PhysicsBody2D::SetIsDestructable(bool isDestructable)
+{
+	this->isDestructable = isDestructable;
+}
+
+bool PhysicsBody2D::IsDestructable() const
+{
+	return isDestructable;
+}
+
+GameObject * PhysicsBody2D::GetOwner() const
+{
+	return owner;
+}
+
 
 void PhysicsBody2D::AddBoxCollider(float32 density, float32 friction)
 {
