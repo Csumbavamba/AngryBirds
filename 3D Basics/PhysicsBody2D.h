@@ -20,6 +20,11 @@ public:
 
 	b2Body * GetRigidBody() const;
 
+	void SetIsDestructable(bool isDestructable);
+	bool IsDestructable() const;
+
+	GameObject * GetOwner() const;
+
 	// Overrides the Transform based on physics
 	void Update();
 
@@ -29,5 +34,6 @@ private:
 
 	b2Body * rigidBody = NULL;
 	GameObject * owner = NULL;
+	bool isDestructable;
 };
 

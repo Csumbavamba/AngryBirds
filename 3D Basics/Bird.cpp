@@ -38,7 +38,7 @@ void Bird::Initialise()
 
 	mesh->Initialise();
 	physicsBody->AddRigidBody(b2_dynamicBody);
-	physicsBody->AddCircleCollider();
+	physicsBody->AddCircleCollider(30.0f);
 }
 
 void Bird::Render(GLuint program)
@@ -104,4 +104,9 @@ b2Vec2 Bird::GetRigidBodyPosition()
 void Bird::SetRigidBodyPosition(b2Vec2 position)
 {
 	physicsBody->GetRigidBody()->SetTransform(position, physicsBody->GetRigidBody()->GetAngle());
+}
+
+float Bird::GetMomentum()
+{
+	return physicsBody->GetRigidBody()->GetLinearVelocity().Length() * physicsBody->GetRigidBody()->GetMass();
 }

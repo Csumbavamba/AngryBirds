@@ -1,4 +1,5 @@
 #include "Physics2D.h"
+#include "Destructable.h"
 
 Physics2D * Physics2D::instance = NULL;
 
@@ -27,6 +28,11 @@ b2Body * Physics2D::CreateBody(b2BodyDef bodyDef)
 	return GetInstance()->world->CreateBody(&bodyDef);
 }
 
+void Physics2D::SetContactListener(PhysicsContactListener * listener)
+{
+	GetInstance()->world->SetContactListener(listener);
+}
+
 void Physics2D::Update(float deltaTime)
 {
 	GetInstance()->world->Step(
@@ -34,6 +40,20 @@ void Physics2D::Update(float deltaTime)
 		GetInstance()->velocityIterations,
 		GetInstance()->positionIterations);
 
+	// Get the objects that need to be destroyed
+	std::vector<Destructable*> * objectsToDisable = GetInstance()->contactListener->GetObjectsToDisable();
+
+	if (objectsToDisable->size() > 0)
+	{
+		// Destroy objects that need deleting
+		for (Destructable * toDisable : *objectsToDisable)
+		{
+			toDisable->DestroyObject();
+		}
+
+		// Clear the destructable objects
+		objectsToDisable->clear();
+	}
 }
 
 void Physics2D::ShutDown()
@@ -52,6 +72,10 @@ Physics2D::Physics2D()
 	positionIterations = 2;
 
 	pixelsPerMeter = 25.0f;
+	contactListener = new PhysicsContactListener();
+
+	// Set the contact listener
+	world->SetContactListener(contactListener);
 }
 
 
@@ -59,4 +83,7 @@ Physics2D::~Physics2D()
 {
 	delete world;
 	world = NULL;
+
+	delete contactListener;
+	contactListener = NULL;
 }

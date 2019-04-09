@@ -146,6 +146,8 @@
     <ClCompile Include="Pig.cpp">
       <Filter>Source\Angry Birds\Destructable</Filter>
     </ClCompile>
+    <ClCompile Include="Destructable.cpp" />
+    <ClCompile Include="PhysicsContactListener.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -293,6 +295,7 @@
     <ClInclude Include="Plank.h">
       <Filter>Header Files\Angry Birds\Destructable</Filter>
     </ClInclude>
+    <ClInclude Include="Destructable.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">
