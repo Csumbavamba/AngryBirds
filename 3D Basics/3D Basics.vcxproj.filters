@@ -144,6 +144,8 @@
       <Filter>Source\Angry Birds\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="Pig.cpp" />
+    <ClCompile Include="RopeJoint.cpp" />
+    <ClCompile Include="RopePoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -289,6 +291,8 @@
       <Filter>Header Files\Angry Birds\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Pig.h" />
+    <ClInclude Include="RopeJoint.h" />
+    <ClInclude Include="RopePoint.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">

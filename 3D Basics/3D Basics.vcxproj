@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{F4529498-C95D-408D-80A6-017C1C085D92}</ProjectGuid>
     <RootNamespace>RotatingShapes</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
     <ProjectName>3D Basics</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -159,6 +159,8 @@
     <ClCompile Include="PhysicsBody2D.cpp" />
     <ClCompile Include="Pig.cpp" />
     <ClCompile Include="Plank.cpp" />
+    <ClCompile Include="RopeJoint.cpp" />
+    <ClCompile Include="RopePoint.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="StartMenuScene.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -207,6 +209,8 @@
     <ClInclude Include="PhysicsBody2D.h" />
     <ClInclude Include="Pig.h" />
     <ClInclude Include="Plank.h" />
+    <ClInclude Include="RopeJoint.h" />
+    <ClInclude Include="RopePoint.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="StartMenuScene.h" />
     <ClInclude Include="Scene.h" />

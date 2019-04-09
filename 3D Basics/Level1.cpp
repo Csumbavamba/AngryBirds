@@ -7,6 +7,7 @@
 #include "Catapult.h"
 #include "YellowBird.h"
 #include "BigBird.h"
+#include "RopeJoint.h"
 #include "UI_Image.h"
 
 
@@ -27,6 +28,7 @@ Level1::Level1()
 	bigBird1 = new BigBird(mainCamera);
 	yellowBird1 = new YellowBird(mainCamera);
 	catapult = new Catapult(mainCamera);
+	ropeJoint = new RopeJoint(mainCamera);
 
 	background = new UI_Image(mainCamera, "Sprites/BackgroundImage.png", glm::vec2(800, 600));
 
@@ -41,6 +43,7 @@ Level1::Level1()
 	gameObjects.push_back(ground);
 	gameObjects.push_back(pig);
 	gameObjects.push_back(topPig);
+	gameObjects.push_back(ropeJoint);
 	
 
 	gameObjects.push_back(redBird1);
