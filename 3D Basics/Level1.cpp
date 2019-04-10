@@ -9,6 +9,7 @@
 #include "BigBird.h"
 #include "RopeJoint.h"
 #include "UI_Image.h"
+#include "WheelJoint.h"
 
 
 Level1::Level1()
@@ -29,6 +30,7 @@ Level1::Level1()
 	yellowBird1 = new YellowBird(mainCamera);
 	catapult = new Catapult(mainCamera);
 	ropeJoint = new RopeJoint(mainCamera);
+	wheelJoint = new WheelJoint(mainCamera);
 
 	background = new UI_Image(mainCamera, "Sprites/BackgroundImage.png", glm::vec2(800, 600));
 
@@ -44,7 +46,7 @@ Level1::Level1()
 	gameObjects.push_back(pig);
 	gameObjects.push_back(topPig);
 	gameObjects.push_back(ropeJoint);
-	
+	gameObjects.push_back(wheelJoint);
 
 	gameObjects.push_back(redBird1);
 	gameObjects.push_back(redBird2);
@@ -68,6 +70,8 @@ void Level1::SetupLevel()
 	background->transform.scale *= 1.3;
 	background->transform.position.x += 250.0f;
 	background->transform.position.y = -10.0f;
+
+	//wheelJoint->transform.position.x += 200;
 
 	//Bird Setup
 	redBird1->transform.position.x += 250.0f;

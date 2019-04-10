@@ -146,6 +146,7 @@
     <ClCompile Include="Pig.cpp" />
     <ClCompile Include="RopeJoint.cpp" />
     <ClCompile Include="RopePoint.cpp" />
+    <ClCompile Include="WheelJoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -293,6 +294,7 @@
     <ClInclude Include="Pig.h" />
     <ClInclude Include="RopeJoint.h" />
     <ClInclude Include="RopePoint.h" />
+    <ClInclude Include="WheelJoint.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">

@@ -10,6 +10,7 @@ class BigBird;
 class Catapult;
 class UI_Image;
 class RopeJoint;
+class WheelJoint;
 
 class Level1 :
 	public Scene
@@ -37,5 +38,6 @@ private:
 	UI_Image * background = NULL;
 	Catapult * catapult = NULL;
 	RopeJoint * ropeJoint = NULL;
+	WheelJoint * wheelJoint = NULL;
 };
 
