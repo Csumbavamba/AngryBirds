@@ -18,6 +18,9 @@ public:
 	virtual void Render(GLuint program) override;
 	virtual void Update(float deltaTime) override;
 
+	virtual void SetIsActive(bool isActive) override;
+	virtual void SetPhysicsEnabled(bool isPhysicsEnabled) override;
+
 private:
 	//Mesh2D_Quad * mesh = NULL;
 

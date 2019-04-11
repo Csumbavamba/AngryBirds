@@ -145,3 +145,8 @@ void Catapult::FireBird()
 		}
 	}
 }
+
+int Catapult::GetBirdIndex() const
+{
+	return birdIndex;
+}

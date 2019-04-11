@@ -9,7 +9,11 @@
 #include "BigBird.h"
 #include "UI_Image.h"
 #include "Utility.h"
+#include "RevoluteJoint.h"
+#include "WheelJoint.h"
 #include "StonePlank.h"
+#include "Input.h"
+#include "Application.h"
 
 
 Level2::Level2()
@@ -29,6 +33,8 @@ Level2::Level2()
 	bigBird1 = new BigBird(mainCamera);
 	yellowBird1 = new YellowBird(mainCamera);
 	catapult = new Catapult(mainCamera);
+	wheelJoint = new WheelJoint(mainCamera);
+	revoluteJoint = new RevoluteJoint(mainCamera);
 	background = new UI_Image(mainCamera, "Sprites/BackgroundImage.png", Utility::GetScreenSize());
 
 	// Add GameObjects to this list
@@ -45,6 +51,8 @@ Level2::Level2()
 	gameObjects.push_back(bigBird1);
 	gameObjects.push_back(yellowBird1);
 	gameObjects.push_back(catapult);
+	gameObjects.push_back(wheelJoint);
+	gameObjects.push_back(revoluteJoint);
 
 	// Setup Catapult
 	catapult->AddBird(redBird1);
@@ -129,4 +137,9 @@ void Level2::Update(float deltaTime)
 	Scene::Update(deltaTime);
 
 	Physics2D::Update(deltaTime);
+
+	if (Input::GetMouseState(0) == DOWN && catapult->GetBirdIndex() > 3)
+	{
+		Application::QuitGame();
+	}
 }

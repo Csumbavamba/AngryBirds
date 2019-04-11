@@ -6,6 +6,7 @@
 class Physics2D_Circle;
 class Mesh2D_Quad;
 class AudioSound;
+class Pig;
 
 
 class RopeJoint: public GameObject
@@ -18,11 +19,14 @@ public:
 	virtual void Render(GLuint program) override;
 	virtual void Update(float deltaTime) override;
 
+	virtual void SetIsActive(bool isActive) override;
+	virtual void SetPhysicsEnabled(bool isPhysicsEnabled) override;
+
 private:
 	//Mesh2D_Quad * mesh = NULL;
 
 	RopePoint * ropePoint1 = NULL;
-	RopePoint * ropePoint2 = NULL;
+	Pig * ropePoint2 = NULL;
 
 	b2DistanceJointDef distanceJointDef;
 };

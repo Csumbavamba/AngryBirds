@@ -10,6 +10,8 @@ class BigBird;
 class Catapult;
 class UI_Image;
 class StonePlank;
+class RevoluteJoint;
+class WheelJoint;
 
 class Level2 :
 	public Scene
@@ -37,5 +39,7 @@ private:
 	YellowBird * yellowBird1 = NULL;
 	UI_Image * background = NULL;
 	Catapult * catapult = NULL;
+	WheelJoint * wheelJoint = NULL;
+	RevoluteJoint * revoluteJoint = NULL;
 };
 

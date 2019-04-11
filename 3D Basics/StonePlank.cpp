@@ -31,7 +31,7 @@ void StonePlank::Initialise()
 	mesh->Initialise();
 
 	physicsBody->AddRigidBody(b2_dynamicBody);
-	physicsBody->AddBoxCollider(600.0f);
+	physicsBody->AddBoxCollider(2400.0f);
 	physicsBody->GetRigidBody()->SetLinearDamping(0.9f);
 	physicsBody->GetRigidBody()->SetAngularDamping(0.9f);
 }

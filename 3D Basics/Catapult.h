@@ -18,6 +18,7 @@ public:
 	void UpdateBirdPosition();
 	void GainControlOfBird();
 	void FireBird();
+	int GetBirdIndex()const;
 
 private:
 	Mesh2D_Quad * mesh = NULL;

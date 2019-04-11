@@ -9,8 +9,9 @@
 #include "BigBird.h"
 #include "RopeJoint.h"
 #include "UI_Image.h"
-#include "RevoluteJoint.h"
-#include "WheelJoint.h"
+#include "Input.h"
+#include "SceneManager.h"
+
 #include "Utility.h"
 
 
@@ -32,8 +33,6 @@ Level1::Level1()
 	yellowBird1 = new YellowBird(mainCamera);
 	catapult = new Catapult(mainCamera);
 	ropeJoint = new RopeJoint(mainCamera);
-	wheelJoint = new WheelJoint(mainCamera);
-	revoluteJoint = new RevoluteJoint(mainCamera);
 	background = new UI_Image(mainCamera, "Sprites/BackgroundImage.png", Utility::GetScreenSize());
 
 
@@ -47,8 +46,7 @@ Level1::Level1()
 	gameObjects.push_back(pig);
 	gameObjects.push_back(topPig);
 	gameObjects.push_back(ropeJoint);
-	gameObjects.push_back(wheelJoint);
-	gameObjects.push_back(revoluteJoint);
+	
 
 	gameObjects.push_back(redBird1);
 	gameObjects.push_back(redBird2);
@@ -72,8 +70,6 @@ void Level1::SetupLevel()
 	background->transform.position.x += 250.0f;
 	background->transform.position.y = -10.0f;
 
-	//wheelJoint->transform.position.x += 200;
-
 	//Bird Setup
 	redBird1->transform.position.x += 250.0f;
 	redBird2->transform.position.x += 250.0f;
@@ -96,15 +92,15 @@ void Level1::SetupLevel()
 	plankRight->transform.position.x -= plankLeft->transform.scale.x;
 
 	// Setup Plank roof
-	plankRoof->transform.position.z = ground->GetTopOfGround() + 50.0f;
+	plankRoof->transform.position.z = ground->GetTopOfGround() + 45.0f;
 	plankRoof->transform.rotation.y = 90.0f;
 
 	// Setup Plank Top
-	plankTop->transform.position.z = ground->GetTopOfGround() + 75.0f;
+	plankTop->transform.position.z = ground->GetTopOfGround() + 70.0f;
 
 	// Setup Pig Positions
 	pig->transform.position.z = ground->GetTopOfGround();
-	topPig->transform.position.z = ground->GetTopOfGround() + 120.0f;
+	topPig->transform.position.z = ground->GetTopOfGround() + 115.0f;
 
 	redBird1->transform.position.z += 300.0f;
 
@@ -141,4 +137,9 @@ void Level1::Update(float deltaTime)
 	Scene::Update(deltaTime);
 
 	Physics2D::Update(deltaTime);
+
+	if (Input::GetMouseState(0) == DOWN && catapult->GetBirdIndex() > 3)
+	{
+		SceneManager::ChangeActiveScene("Level2");
+	}
 }

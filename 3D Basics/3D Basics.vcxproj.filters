@@ -145,7 +145,6 @@
     <ClCompile Include="Pig.cpp">
       <Filter>Source\Angry Birds\Destructable</Filter>
     </ClCompile>
-    <ClCompile Include="PhysicsContactListener.cpp" />
     <ClCompile Include="Catapult.cpp">
       <Filter>Source\Angry Birds</Filter>
     </ClCompile>
@@ -165,8 +164,15 @@
     <ClCompile Include="WheelJoint.cpp">
       <Filter>Source\Angry Birds\Joints</Filter>
     </ClCompile>
-    <ClCompile Include="Level2.cpp" />
-    <ClCompile Include="StonePlank.cpp" />
+    <ClCompile Include="Level2.cpp">
+      <Filter>Source\Angry Birds\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsContactListener.cpp">
+      <Filter>Source\Engine\Physics\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="StonePlank.cpp">
+      <Filter>Source\Angry Birds</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -332,8 +338,12 @@
     <ClInclude Include="RopeJoint.h">
       <Filter>Header Files\Angry Birds\Joints</Filter>
     </ClInclude>
-    <ClInclude Include="Level2.h" />
-    <ClInclude Include="StonePlank.h" />
+    <ClInclude Include="Level2.h">
+      <Filter>Header Files\Angry Birds\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="StonePlank.h">
+      <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">

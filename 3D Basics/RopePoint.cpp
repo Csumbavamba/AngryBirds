@@ -46,6 +46,7 @@ void RopePoint::Update(float deltaTime)
 	physicsBody->Update();
 }
 
+
 Mesh2D_Quad * RopePoint::GetMesh()
 {
 	return mesh;

@@ -58,3 +58,8 @@ void GameObject::SetPhysicsEnabled(bool isPhysicsEnabled)
 	physicsBody->GetRigidBody()->SetActive(isPhysicsEnabled);
 	
 }
+
+PhysicsBody2D * GameObject::GetPhysicsBody() const
+{
+	return physicsBody;
+}

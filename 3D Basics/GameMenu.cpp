@@ -145,7 +145,7 @@ void GameMenu::ActOnMenuChoice()
 {
 	if (startButton->IsClicked())
 	{
-		SceneManager::ChangeActiveScene("Level2");
+		SceneManager::ChangeActiveScene("Level1");
 	}
 	else if (quitButton->IsClicked())
 	{

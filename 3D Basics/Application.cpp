@@ -34,7 +34,8 @@ Application::Application()
 	// Push Scenes into the scene Holder
 	scenes.push_back(startMenuScene);
 	scenes.push_back(gameScene);
-	scenes.push_back(level2); // TODO add level 1
+	scenes.push_back(level1);
+	scenes.push_back(level2);
 
 	backgroundMusic = new AudioSound("Audio/AngryBirdsTheme.mp3", LOOPING);
 
