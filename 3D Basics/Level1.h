@@ -10,6 +10,7 @@ class BigBird;
 class Catapult;
 class UI_Image;
 class RopeJoint;
+class RevoluteJoint;
 class WheelJoint;
 
 class Level1 :
@@ -39,5 +40,6 @@ private:
 	Catapult * catapult = NULL;
 	RopeJoint * ropeJoint = NULL;
 	WheelJoint * wheelJoint = NULL;
+	RevoluteJoint * revoluteJoint = NULL;
 };
 

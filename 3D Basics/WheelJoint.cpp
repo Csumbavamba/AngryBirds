@@ -27,7 +27,7 @@ void WheelJoint::Initialise()
 	ropePoint1->Initialise(b2_dynamicBody);
 	ropePoint2->Initialise(b2_dynamicBody);
 
-	wheelJointDef.Initialize(ropePoint1->GetPhysicsBody(), ropePoint2->GetPhysicsBody(), ropePoint1->GetPhysicsBody()->GetPosition());
+	wheelJointDef.Initialize(ropePoint1->GetPhysicsBody(), ropePoint2->GetPhysicsBody(), ropePoint1->GetPhysicsBody()->GetPosition() );
 
 	ropePoint1->GetPhysicsBody()->GetWorld()->CreateJoint(&wheelJointDef);
 }

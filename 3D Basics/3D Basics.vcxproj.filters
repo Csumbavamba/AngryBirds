@@ -144,9 +144,18 @@
       <Filter>Source\Angry Birds\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="Pig.cpp" />
-    <ClCompile Include="RopeJoint.cpp" />
-    <ClCompile Include="RopePoint.cpp" />
-    <ClCompile Include="WheelJoint.cpp" />
+    <ClCompile Include="RevoluteJoint.cpp">
+      <Filter>Source\Angry Birds\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="RopeJoint.cpp">
+      <Filter>Source\Angry Birds\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="RopePoint.cpp">
+      <Filter>Source\Angry Birds\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="WheelJoint.cpp">
+      <Filter>Source\Angry Birds\Joints</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -292,9 +301,18 @@
       <Filter>Header Files\Angry Birds\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Pig.h" />
-    <ClInclude Include="RopeJoint.h" />
-    <ClInclude Include="RopePoint.h" />
-    <ClInclude Include="WheelJoint.h" />
+    <ClInclude Include="RevoluteJoint.h">
+      <Filter>Header Files\Angry Birds\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="WheelJoint.h">
+      <Filter>Header Files\Angry Birds\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="RopePoint.h">
+      <Filter>Header Files\Angry Birds\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="RopeJoint.h">
+      <Filter>Header Files\Angry Birds\Joints</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">
@@ -427,6 +445,12 @@
     </Filter>
     <Filter Include="Source\Angry Birds\Birds">
       <UniqueIdentifier>{2a8895f1-a912-4c0b-a170-50c8ca4b1cb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Angry Birds\Joints">
+      <UniqueIdentifier>{f3c1f93a-aa27-47f5-aa37-599529ee15ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Angry Birds\Joints">
+      <UniqueIdentifier>{23fcd05e-14c3-42f6-b8a1-fe6ab31780ab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
