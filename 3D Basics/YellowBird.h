@@ -12,7 +12,7 @@ public:
 	virtual void Update(float deltaTime) override;
 
 protected:
-	glm::vec2 testVector = glm::vec2(-50.0f, 1.0f);
+	glm::vec2 testVector = glm::vec2(-3000.0f, 60.0f);
 
 	bool hasFired = false;
 

@@ -11,7 +11,7 @@ public:
 
 	// Sets up the rigidBody - scaling is no longer supported after this
 	void AddRigidBody(b2BodyType type = b2_staticBody);
-
+	
 	// Make a Box Collider (Fixture) needs a rigidBody
 	void AddBoxCollider(float32 density = 1.0f, float32 friction = 0.3f);
 

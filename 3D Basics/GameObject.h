@@ -23,11 +23,13 @@ public:
 
 	void SetCamera(Camera * camera);
 	
-	void SetIsActive(bool isActive);
-	bool IsActive() const;
+	virtual void SetIsActive(bool isActive);
+	virtual bool IsActive() const;
 
-	bool IsPhysicsEnabled() const; // TODO see if its needed
-	void SetPhysicsEnabled(bool isPhysicsEnabled);
+	virtual bool IsPhysicsEnabled() const; // TODO see if its needed
+	virtual void SetPhysicsEnabled(bool isPhysicsEnabled);
+
+	PhysicsBody2D * GetPhysicsBody() const;
 
 	Transform transform;
 

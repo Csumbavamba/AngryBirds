@@ -127,7 +127,6 @@
     <ClCompile Include="Bird.cpp">
       <Filter>Source\Angry Birds\Birds</Filter>
     </ClCompile>
-    <ClCompile Include="Catapult.cpp" />
     <ClCompile Include="YellowBird.cpp">
       <Filter>Source\Angry Birds\Birds</Filter>
     </ClCompile>
@@ -146,8 +145,34 @@
     <ClCompile Include="Pig.cpp">
       <Filter>Source\Angry Birds\Destructable</Filter>
     </ClCompile>
-    <ClCompile Include="Destructable.cpp" />
-    <ClCompile Include="PhysicsContactListener.cpp" />
+    <ClCompile Include="Catapult.cpp">
+      <Filter>Source\Angry Birds</Filter>
+    </ClCompile>
+    <ClCompile Include="Destructable.cpp">
+      <Filter>Source\Angry Birds</Filter>
+    </ClCompile>
+    <ClCompile Include="Pig.cpp" />
+    <ClCompile Include="RevoluteJoint.cpp">
+      <Filter>Source\Angry Birds\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="RopeJoint.cpp">
+      <Filter>Source\Angry Birds\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="RopePoint.cpp">
+      <Filter>Source\Angry Birds\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="WheelJoint.cpp">
+      <Filter>Source\Angry Birds\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="Level2.cpp">
+      <Filter>Source\Angry Birds\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsContactListener.cpp">
+      <Filter>Source\Engine\Physics\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="StonePlank.cpp">
+      <Filter>Source\Angry Birds</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -276,7 +301,6 @@
     <ClInclude Include="Bird.h">
       <Filter>Header Files\Angry Birds\Birds</Filter>
     </ClInclude>
-    <ClInclude Include="Catapult.h" />
     <ClInclude Include="YellowBird.h">
       <Filter>Header Files\Angry Birds\Birds</Filter>
     </ClInclude>
@@ -295,7 +319,31 @@
     <ClInclude Include="Plank.h">
       <Filter>Header Files\Angry Birds\Destructable</Filter>
     </ClInclude>
-    <ClInclude Include="Destructable.h" />
+    <ClInclude Include="Destructable.h">
+      <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="Catapult.h">
+      <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="Pig.h" />
+    <ClInclude Include="RevoluteJoint.h">
+      <Filter>Header Files\Angry Birds\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="WheelJoint.h">
+      <Filter>Header Files\Angry Birds\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="RopePoint.h">
+      <Filter>Header Files\Angry Birds\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="RopeJoint.h">
+      <Filter>Header Files\Angry Birds\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="Level2.h">
+      <Filter>Header Files\Angry Birds\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="StonePlank.h">
+      <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">
@@ -428,6 +476,12 @@
     </Filter>
     <Filter Include="Source\Angry Birds\Birds">
       <UniqueIdentifier>{2a8895f1-a912-4c0b-a170-50c8ca4b1cb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Angry Birds\Joints">
+      <UniqueIdentifier>{f3c1f93a-aa27-47f5-aa37-599529ee15ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Angry Birds\Joints">
+      <UniqueIdentifier>{23fcd05e-14c3-42f6-b8a1-fe6ab31780ab}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Angry Birds\Destructable">
       <UniqueIdentifier>{7d0dbe79-fa43-4df2-a86c-68ed55053644}</UniqueIdentifier>

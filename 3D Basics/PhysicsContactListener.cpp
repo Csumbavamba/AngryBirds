@@ -11,8 +11,26 @@ void PhysicsContactListener::BeginContact(b2Contact * contact)
 	auto contactData = contact->GetFixtureA()->GetBody()->GetUserData();
 	if (contactData) 
 	{ 
-		birdMomentum = static_cast<PhysicsBody2D*>(contactData)->GetRigidBody()->GetMass() * 
+		birdMomentum = static_cast<PhysicsBody2D*>(contactData)->GetRigidBody()->GetMass() *
 			static_cast<PhysicsBody2D*>(contactData)->GetRigidBody()->GetLinearVelocity().Length();
+
+		// Check if the momentum of the bird object is bigger than a threshold (set inside the object)
+		auto destructableBody = static_cast<PhysicsBody2D*>(contactData);
+		{
+			if (destructableBody->IsDestructable())
+			{
+				// If it is destroy it - Otherwise do nothing
+				if (destroyThreshold < birdMomentum)
+				{
+					// int i = 0;
+					auto* destructableObject = static_cast<Destructable*>(destructableBody->GetOwner());
+					objectsToDisable.push_back(destructableObject);
+					destructableObject->ReadyDestruction(true);
+				}
+			}
+		}
+
+		
 
 		
 	}
@@ -26,11 +44,9 @@ void PhysicsContactListener::BeginContact(b2Contact * contact)
 
 		if (destructableBody->IsDestructable())
 		{
-			Utility::Print(birdMomentum);
 			// If it is destroy it - Otherwise do nothing
 			if (destroyThreshold < birdMomentum)
 			{
-				
 				// int i = 0;
 				auto* destructableObject = static_cast<Destructable*>(destructableBody->GetOwner());
 				objectsToDisable.push_back(destructableObject);
@@ -42,40 +58,6 @@ void PhysicsContactListener::BeginContact(b2Contact * contact)
 	}
 }
 
-void PhysicsContactListener::EndContact(b2Contact* contact)
-{
-	////check if fixture A was a Destructable obj
-	//auto contactData = contact->GetFixtureA()->GetBody()->GetUserData();
-	//if (contactData) //{/*Do nothing*/}
-	//{
-	//	auto destructableBody = static_cast<PhysicsBody2D*>(contactData);
-
-	//	if (destructableBody->IsDestructable())
-	//	{
-	//		if (destructableBody->GetRigidBody()->IsActive())
-	//		{
-	//			static_cast<Destructable*>(destructableBody->GetOwner())->DestroyObject();
-	//		}
-	//		
-	//	}
-	//}
-
-	////check if fixture B was a Destructable obj
-	///*auto contactData = contact->GetFixtureB()->GetBody()->GetUserData();
-	//if (contactData)
-	//{
-	//	auto destructableBody = static_cast<PhysicsBody2D*>(contactData);
-
-	//	if (destructableBody->IsDestructable())
-	//	{
-	//		if (destructableBody->GetRigidBody()->IsActive())
-	//		{
-	//			static_cast<Destructable*>(destructableBody->GetOwner())->DestroyObject();
-	//		}
-	//		
-	//	}
-	//}*/
-}
 
 std::vector<Destructable*> * PhysicsContactListener::GetObjectsToDisable()
 {

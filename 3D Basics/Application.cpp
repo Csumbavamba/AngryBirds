@@ -14,6 +14,7 @@
 #include "StartMenuScene.h"
 #include "GameScene.h"
 #include "Level1.h"
+#include "Level2.h"
 
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -28,11 +29,13 @@ Application::Application()
 	startMenuScene->SetIsActiveScene(true);
 	gameScene = new GameScene();
 	level1 = new Level1();
+	level2 = new Level2();
 	
 	// Push Scenes into the scene Holder
 	scenes.push_back(startMenuScene);
 	scenes.push_back(gameScene);
 	scenes.push_back(level1);
+	scenes.push_back(level2);
 
 	backgroundMusic = new AudioSound("Audio/AngryBirdsTheme.mp3", LOOPING);
 

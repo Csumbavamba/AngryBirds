@@ -155,16 +155,21 @@
     <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Level1.cpp" />
+    <ClCompile Include="Level2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Physics2D.cpp" />
     <ClCompile Include="PhysicsBody2D.cpp" />
     <ClCompile Include="PhysicsContactListener.cpp" />
     <ClCompile Include="Pig.cpp" />
     <ClCompile Include="Plank.cpp" />
+    <ClCompile Include="RevoluteJoint.cpp" />
+    <ClCompile Include="RopeJoint.cpp" />
+    <ClCompile Include="RopePoint.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="StartMenuScene.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Ground.cpp" />
+    <ClCompile Include="StonePlank.cpp" />
     <ClCompile Include="UI_Image.cpp" />
     <ClCompile Include="Collider_Box2D.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -189,6 +194,7 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="UI_Text.cpp" />
     <ClCompile Include="Utility.cpp" />
+    <ClCompile Include="WheelJoint.cpp" />
     <ClCompile Include="YellowBird.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -206,14 +212,19 @@
     <ClInclude Include="GameMenu.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Level1.h" />
+    <ClInclude Include="Level2.h" />
     <ClInclude Include="Physics2D.h" />
     <ClInclude Include="PhysicsBody2D.h" />
     <ClInclude Include="Pig.h" />
     <ClInclude Include="Plank.h" />
+    <ClInclude Include="RevoluteJoint.h" />
+    <ClInclude Include="RopeJoint.h" />
+    <ClInclude Include="RopePoint.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="StartMenuScene.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Ground.h" />
+    <ClInclude Include="StonePlank.h" />
     <ClInclude Include="UI_Image.h" />
     <ClInclude Include="Collider_Box2D.h" />
     <ClInclude Include="Camera.h" />
@@ -239,6 +250,7 @@
     <ClInclude Include="Transform.h" />
     <ClInclude Include="UI_Text.h" />
     <ClInclude Include="Utility.h" />
+    <ClInclude Include="WheelJoint.h" />
     <ClInclude Include="YellowBird.h" />
   </ItemGroup>
   <ItemGroup>

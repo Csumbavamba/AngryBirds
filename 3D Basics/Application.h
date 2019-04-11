@@ -11,10 +11,7 @@
 
 class ShaderLoader;
 class Scene;
-class StartMenuScene;
-class GameScene;
 class AudioSound;
-class Level1;
 
 
 
@@ -54,6 +51,7 @@ private:
 	Scene * startMenuScene = NULL;
 	Scene * gameScene = NULL;
 	Scene * level1 = NULL;
+	Scene * level2 = NULL;
 	
 
 	std::vector<Scene*> scenes;
