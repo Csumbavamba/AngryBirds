@@ -38,7 +38,7 @@ void BigBird::ApplyImpulse(glm::vec2 & impulseVector)
 {
 	physicsBody->GetRigidBody()->SetLinearVelocity(b2Vec2(0, 0));
 	physicsBody->GetRigidBody()->SetAngularVelocity(0);
-	b2Vec2 force = b2Vec2(impulseVector.x * 1000, impulseVector.y * 1000);
+	b2Vec2 force = b2Vec2(impulseVector.x * 1000, impulseVector.y * 600);
 	b2Vec2 point = b2Vec2(Physics2D::PixelsToBox2DMeters(this->transform.position.x),
 		Physics2D::PixelsToBox2DMeters(this->transform.position.z));
 

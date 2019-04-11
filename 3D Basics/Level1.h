@@ -9,6 +9,9 @@ class YellowBird;
 class BigBird;
 class Catapult;
 class UI_Image;
+class RopeJoint;
+class RevoluteJoint;
+class WheelJoint;
 
 class Level1 :
 	public Scene
@@ -35,5 +38,8 @@ private:
 	YellowBird * yellowBird1 = NULL;
 	UI_Image * background = NULL;
 	Catapult * catapult = NULL;
+	RopeJoint * ropeJoint = NULL;
+	WheelJoint * wheelJoint = NULL;
+	RevoluteJoint * revoluteJoint = NULL;
 };
 

@@ -7,7 +7,10 @@
 #include "Catapult.h"
 #include "YellowBird.h"
 #include "BigBird.h"
+#include "RopeJoint.h"
 #include "UI_Image.h"
+#include "RevoluteJoint.h"
+#include "WheelJoint.h"
 #include "Utility.h"
 
 
@@ -28,6 +31,9 @@ Level1::Level1()
 	bigBird1 = new BigBird(mainCamera);
 	yellowBird1 = new YellowBird(mainCamera);
 	catapult = new Catapult(mainCamera);
+	ropeJoint = new RopeJoint(mainCamera);
+	wheelJoint = new WheelJoint(mainCamera);
+	revoluteJoint = new RevoluteJoint(mainCamera);
 	background = new UI_Image(mainCamera, "Sprites/BackgroundImage.png", Utility::GetScreenSize());
 
 
@@ -40,6 +46,10 @@ Level1::Level1()
 	gameObjects.push_back(ground);
 	gameObjects.push_back(pig);
 	gameObjects.push_back(topPig);
+	gameObjects.push_back(ropeJoint);
+	gameObjects.push_back(wheelJoint);
+	gameObjects.push_back(revoluteJoint);
+
 	gameObjects.push_back(redBird1);
 	gameObjects.push_back(redBird2);
 	gameObjects.push_back(bigBird1);
@@ -61,6 +71,8 @@ void Level1::SetupLevel()
 	// Setup background
 	background->transform.position.x += 250.0f;
 	background->transform.position.y = -10.0f;
+
+	//wheelJoint->transform.position.x += 200;
 
 	//Bird Setup
 	redBird1->transform.position.x += 250.0f;
