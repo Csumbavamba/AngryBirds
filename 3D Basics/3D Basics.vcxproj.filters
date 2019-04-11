@@ -127,7 +127,6 @@
     <ClCompile Include="Bird.cpp">
       <Filter>Source\Angry Birds\Birds</Filter>
     </ClCompile>
-    <ClCompile Include="Catapult.cpp" />
     <ClCompile Include="YellowBird.cpp">
       <Filter>Source\Angry Birds\Birds</Filter>
     </ClCompile>
@@ -146,8 +145,15 @@
     <ClCompile Include="Pig.cpp">
       <Filter>Source\Angry Birds\Destructable</Filter>
     </ClCompile>
-    <ClCompile Include="Destructable.cpp" />
     <ClCompile Include="PhysicsContactListener.cpp" />
+    <ClCompile Include="Catapult.cpp">
+      <Filter>Source\Angry Birds</Filter>
+    </ClCompile>
+    <ClCompile Include="Destructable.cpp">
+      <Filter>Source\Angry Birds</Filter>
+    </ClCompile>
+    <ClCompile Include="Level2.cpp" />
+    <ClCompile Include="StonePlank.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -276,7 +282,6 @@
     <ClInclude Include="Bird.h">
       <Filter>Header Files\Angry Birds\Birds</Filter>
     </ClInclude>
-    <ClInclude Include="Catapult.h" />
     <ClInclude Include="YellowBird.h">
       <Filter>Header Files\Angry Birds\Birds</Filter>
     </ClInclude>
@@ -295,7 +300,14 @@
     <ClInclude Include="Plank.h">
       <Filter>Header Files\Angry Birds\Destructable</Filter>
     </ClInclude>
-    <ClInclude Include="Destructable.h" />
+    <ClInclude Include="Destructable.h">
+      <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="Catapult.h">
+      <Filter>Header Files\Angry Birds</Filter>
+    </ClInclude>
+    <ClInclude Include="Level2.h" />
+    <ClInclude Include="StonePlank.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">

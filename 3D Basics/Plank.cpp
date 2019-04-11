@@ -23,7 +23,7 @@ void Plank::Initialise()
 	mesh->GetTexture()->SetTexturePath("Sprites/Plank.jpg");
 
 	physicsBody->AddRigidBody(b2_dynamicBody);
-	physicsBody->AddBoxCollider(10.0f, 0.8f);
+	physicsBody->AddBoxCollider(1.3f, 0.8f);
 	physicsBody->GetRigidBody()->SetLinearDamping(0.9f);
 	physicsBody->GetRigidBody()->SetAngularDamping(0.9f);
 }

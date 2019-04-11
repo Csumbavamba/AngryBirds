@@ -1,5 +1,5 @@
 #pragma once
-#include "GameObject.h"
+#include "Destructable.h"
 #include "Physics2D.h"
 
 class Physics2D_Circle;
@@ -7,7 +7,7 @@ class Mesh2D_Quad;
 class AudioSound;
 
 class Bird:
-	 public GameObject
+	 public Destructable
 {
 public:
 	Bird();

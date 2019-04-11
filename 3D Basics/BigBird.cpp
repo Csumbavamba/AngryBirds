@@ -23,7 +23,7 @@ void BigBird::Initialise()
 {
 	mesh->Initialise();
 	physicsBody->AddRigidBody(b2_dynamicBody);
-	physicsBody->AddCircleCollider(600.0f);
+	physicsBody->AddCircleCollider(1200.0f);
 
 }
 

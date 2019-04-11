@@ -49,12 +49,11 @@ class PhysicsContactListener :
 public:
 
 	void BeginContact(b2Contact* contact) override;
-	void EndContact(b2Contact* contact) override;
 	std::vector<Destructable*> * GetObjectsToDisable();
 
 private:
 	std::vector<Destructable*> objectsToDisable;
-	const float destroyThreshold = 100.0f;
+	const float destroyThreshold = 5.0f;
 
 };
 

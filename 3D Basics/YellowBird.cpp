@@ -24,7 +24,7 @@ void YellowBird::Initialise()
 
 	mesh->Initialise();
 	physicsBody->AddRigidBody(b2_dynamicBody);
-	physicsBody->AddCircleCollider(30.0f);
+	physicsBody->AddCircleCollider(60.0f);
 }
 
 void YellowBird::Update(float deltaTime)
