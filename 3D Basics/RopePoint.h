@@ -7,7 +7,6 @@
 #include "PhysicsBody2D.h"
 
 class Physics2D_Circle;
-class AudioSound;
 
 class RopePoint : public GameObject
 {

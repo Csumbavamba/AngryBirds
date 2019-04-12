@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Dependencies\fmod\fmod.hpp"
+#include "Dependencies/fmod/fmod.hpp"
 #include "Dependencies/glm/glm.hpp"
 
 #include <map>

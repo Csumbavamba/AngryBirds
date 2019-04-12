@@ -5,7 +5,6 @@
 
 class Physics2D_Circle;
 class Mesh2D_Quad;
-class AudioSound;
 class Pig;
 
 

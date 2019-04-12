@@ -3,8 +3,6 @@
 #include "PhysicsBody2D.h"
 #include "Texture.h"
 #include "Input.h"
-#include "AudioSound.h"
-#include "AudioEngine.h"
 
 
 RopePoint::RopePoint(Camera * mainCamera, std::string filePath)
